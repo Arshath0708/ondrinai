@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-off-white text-charcoal font-sans;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+    line-height: 1.15;
+    font-optical-sizing: auto;
+  }
+
+  ::selection {
+    @apply bg-forest text-cream;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-forest;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply px-5 sm:px-8 lg:px-12 xl:px-16;
+  }
+
+  .container-max {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .eyebrow {
+    @apply text-xs font-sans font-semibold uppercase tracking-editorial;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 ease-editorial disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-forest text-cream hover:bg-deep-green hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent text-forest border border-forest/30 hover:border-forest hover:bg-forest hover:text-cream;
+  }
+
+  .btn-light {
+    @apply btn bg-cream text-forest hover:bg-off-white hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline-light {
+    @apply btn bg-transparent text-cream border border-cream/40 hover:bg-cream hover:text-forest;
+  }
+
+  .link-underline {
+    @apply relative inline-flex items-center gap-1.5 text-sm font-semibold text-forest transition-colors duration-200 hover:text-deep-green;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-px w-0 bg-forest transition-all duration-300 ease-editorial;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 ease-editorial hover:-translate-y-1 hover:shadow-xl;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-editorial, transform 0.6s ease-editorial;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
