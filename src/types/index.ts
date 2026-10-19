@@ -1,3 +1,5 @@
+export type ActivityCategory = 'FEED' | 'PLANT' | 'BUILD' | 'RESPOND';
+
 export interface NavItem {
   label: string;
   path: string;
@@ -29,7 +31,7 @@ export interface Activity {
   id: string;
   number: string;
   slug: string;
-  category: 'FEED' | 'PLANT' | 'BUILD';
+  category: ActivityCategory;
   title: string;
   shortDescription: string;
   description: string;
@@ -46,7 +48,8 @@ export interface Activity {
   reflection?: string;
   photos: ActivityPhoto[];
   video?: ActivityVideo | null;
-  status: 'completed';
+  reelUrl?: string;
+  status: 'completed' | 'in-progress' | 'planned';
 }
 
 export interface InvolvementPath {
@@ -72,4 +75,50 @@ export interface TransparencyEntry {
   materialsContributed?: string;
   outcome: string;
   hasPhotos: boolean;
+  status?: 'completed' | 'planned' | 'in-progress';
+}
+
+export interface ContributionCause {
+  id: string;
+  title: string;
+  category: ActivityCategory;
+  amount: number;
+  unitLabel: string;
+  description: string;
+  disclaimer?: string;
+}
+
+export interface ActivitySponsorship {
+  id: string;
+  title: string;
+  category: ActivityCategory;
+  shortDescription: string;
+  status: 'planned' | 'in-progress' | 'completed';
+  targetAmount?: number;
+  targetDescription?: string;
+  plannedDate?: string;
+  image?: string;
+  activitySlug?: string;
+  fundingNotes?: string;
+}
+
+export interface GalleryItem {
+  id: string;
+  title: string;
+  category: ActivityCategory;
+  image: string;
+  alt: string;
+  date?: string;
+  location?: string;
+  activitySlug?: string;
+  description?: string;
+}
+
+export interface PartnerItem {
+  id: string;
+  name: string;
+  type: 'collaborator' | 'community' | 'partner';
+  description: string;
+  collaborationDetail?: string;
+  activitySlug?: string;
 }

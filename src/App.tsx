@@ -8,6 +8,8 @@ import { GetInvolvedPage } from '@/pages/GetInvolvedPage';
 import { TransparencyPage } from '@/pages/TransparencyPage';
 import { ContactPage } from '@/pages/ContactPage';
 import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage';
+import { GalleryPage } from '@/pages/GalleryPage';
+import { DonatePage } from '@/pages/DonatePage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
 export default function App() {
@@ -19,8 +21,10 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/activities" element={<ActivitiesPage />} />
           <Route path="/activities/:slug" element={<ActivityDetailPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/get-involved" element={<GetInvolvedPage />} />
           <Route path="/transparency" element={<TransparencyPage />} />
+          <Route path="/donate" element={<DonatePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="*" element={<NotFoundPage />} />

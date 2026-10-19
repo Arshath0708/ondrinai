@@ -1,19 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Mail, Instagram, Facebook, Youtube, Linkedin, ArrowRight } from 'lucide-react';
-import { siteConfig, socialLinks, navItems, VOLUNTEER_FORM_URL } from '@/config/site';
+import { Mail, Instagram, MessageCircle, ArrowRight } from 'lucide-react';
+import { siteConfig, navItems, WHATSAPP_COMMUNITY_URL } from '@/config/site';
 import { Logo } from '@/components/Logo';
-
-const socialIcons = {
-  instagram: Instagram,
-  facebook: Facebook,
-  youtube: Youtube,
-  linkedin: Linkedin,
-};
 
 export function Footer() {
   const year = new Date().getFullYear();
-
-  const hasSocialUrl = (url: string) => url && url.startsWith('http');
 
   return (
     <footer className="bg-deep-green text-cream">
@@ -22,12 +13,15 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12">
           {/* Brand column */}
           <div className="lg:col-span-4">
-            <Logo variant="light" />
-            <p className="mt-4 text-cream/70 text-sm leading-relaxed max-w-xs">
+            <Logo variant="light" size="lg" />
+            <p className="mt-5 text-cream/75 text-sm leading-relaxed max-w-sm">
               {siteConfig.tagline}
             </p>
-            <p className="mt-3 font-tamil text-cream/60 text-sm">
+            <p className="mt-2.5 font-tamil text-cream/60 text-sm leading-relaxed">
               {siteConfig.tamilTagline}
+            </p>
+            <p className="mt-4 text-xs text-cream/40 italic">
+              &ldquo;{siteConfig.philosophy}&rdquo;
             </p>
           </div>
 
@@ -39,7 +33,7 @@ export function Footer() {
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-sm text-cream/70 hover:text-cream transition-colors"
+                    className="text-sm text-cream/70 hover:text-cream transition-colors inline-block py-0.5"
                   >
                     {item.label}
                   </Link>
@@ -47,16 +41,8 @@ export function Footer() {
               ))}
               <li>
                 <Link
-                  to="/transparency"
-                  className="text-sm text-cream/70 hover:text-cream transition-colors"
-                >
-                  Transparency
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/privacy-policy"
-                  className="text-sm text-cream/70 hover:text-cream transition-colors"
+                  className="text-sm text-cream/70 hover:text-cream transition-colors inline-block py-0.5"
                 >
                   Privacy Policy
                 </Link>
@@ -69,59 +55,50 @@ export function Footer() {
             <p className="eyebrow text-sage mb-5">Connect</p>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="inline-flex items-center gap-2 text-sm text-cream/80 hover:text-cream transition-colors mb-5"
+              className="inline-flex items-center gap-2.5 text-sm text-cream/80 hover:text-cream transition-colors mb-6 group"
             >
-              <Mail className="w-4 h-4 text-sage" />
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cream/10 group-hover:bg-cream/20 transition-colors">
+                <Mail className="w-4 h-4 text-sage" />
+              </span>
               {siteConfig.email}
             </a>
 
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((social) => {
-                const Icon = socialIcons[social.icon];
-                if (hasSocialUrl(social.url)) {
-                  return (
-                    <a
-                      key={social.label}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${social.label} — ${social.handle}`}
-                      className="inline-flex items-center justify-center w-10 h-10 border border-cream/20 text-cream/70 hover:text-cream hover:border-cream/50 transition-all"
-                    >
-                      <Icon className="w-4 h-4" />
-                    </a>
-                  );
-                }
-                return (
-                  <span
-                    key={social.label}
-                    aria-label={`${social.label} — ${social.handle} (link coming soon)`}
-                    className="inline-flex items-center justify-center w-10 h-10 border border-cream/10 text-cream/30 cursor-not-allowed"
-                    title={`${social.label} — link coming soon`}
-                  >
-                    <Icon className="w-4 h-4" />
-                  </span>
-                );
-              })}
+            <div className="flex flex-wrap gap-3 mb-6">
+              <a
+                href={WHATSAPP_COMMUNITY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Join ONDRINAI WhatsApp Community"
+                className="inline-flex items-center gap-2 px-3.5 py-2 border border-cream/20 text-cream/80 hover:text-cream hover:border-cream/50 transition-all text-xs font-medium"
+              >
+                <MessageCircle className="w-4 h-4 text-sage" />
+                WhatsApp Community
+              </a>
+              <a
+                href="https://www.instagram.com/reel/DcjDeSazK4K/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ONDRINAI on Instagram"
+                className="inline-flex items-center gap-2 px-3.5 py-2 border border-cream/20 text-cream/80 hover:text-cream hover:border-cream/50 transition-all text-xs font-medium"
+              >
+                <Instagram className="w-4 h-4 text-sage" />
+                Instagram
+              </a>
             </div>
 
-            <div className="mt-8">
-              {VOLUNTEER_FORM_URL ? (
-                <a
-                  href={VOLUNTEER_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-light"
-                >
-                  Become a Volunteer
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              ) : (
-                <Link to="/get-involved" className="btn-light">
-                  Become a Volunteer
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              )}
+            <div className="pt-2">
+              <p className="text-xs text-cream/60 mb-3 leading-relaxed">
+                {siteConfig.volunteerExplanation}
+              </p>
+              <a
+                href={WHATSAPP_COMMUNITY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-light text-xs sm:text-sm"
+              >
+                Join as a Volunteer
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
@@ -130,12 +107,12 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-cream/10">
         <div className="container-max container-px py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-cream/50">
-              &copy; {year} {siteConfig.brandName}. All rights reserved.
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/50">
+            <p>
+              &copy; {year} {siteConfig.brandName}. Madurai, Tamil Nadu.
             </p>
-            <p className="text-xs text-cream/40 text-center sm:text-right">
-              {siteConfig.location}
+            <p className="text-center sm:text-right text-cream/40">
+              Student-led community initiative &bull; Non-governmental
             </p>
           </div>
         </div>

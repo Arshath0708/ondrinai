@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import type { ActivityCategory } from '@/types';
 
 interface RevealProps {
   children: React.ReactNode;
@@ -68,21 +68,23 @@ export function SectionHeading({
 }
 
 interface CategoryBadgeProps {
-  category: 'FEED' | 'PLANT' | 'BUILD';
+  category: ActivityCategory;
   light?: boolean;
 }
 
 export function CategoryBadge({ category, light = false }: CategoryBadgeProps) {
-  const styles: Record<string, string> = light
+  const styles: Record<ActivityCategory, string> = light
     ? {
         FEED: 'bg-cream/15 text-cream border-cream/25',
         PLANT: 'bg-cream/15 text-cream border-cream/25',
         BUILD: 'bg-cream/15 text-cream border-cream/25',
+        RESPOND: 'bg-cream/15 text-cream border-cream/25',
       }
     : {
         FEED: 'bg-sage/30 text-forest border-sage/50',
         PLANT: 'bg-sage/30 text-forest border-sage/50',
         BUILD: 'bg-accent/20 text-forest border-accent/40',
+        RESPOND: 'bg-forest/15 text-forest border-forest/30',
       };
 
   return (
@@ -157,11 +159,13 @@ interface PageHeroProps {
   eyebrow?: string;
   title: string;
   intro?: string;
+  subtitle?: string;
   variant?: 'cream' | 'forest';
 }
 
-export function PageHero({ eyebrow, title, intro, variant = 'cream' }: PageHeroProps) {
+export function PageHero({ eyebrow, title, intro, subtitle, variant = 'cream' }: PageHeroProps) {
   const isForest = variant === 'forest';
+  const description = intro || subtitle;
 
   return (
     <section className={`${isForest ? 'bg-forest text-cream' : 'bg-cream text-charcoal'} pt-32 pb-16 sm:pt-36 sm:pb-20`}>
@@ -173,9 +177,9 @@ export function PageHero({ eyebrow, title, intro, variant = 'cream' }: PageHeroP
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-balance max-w-3xl">
             {title}
           </h1>
-          {intro && (
+          {description && (
             <p className={`mt-6 text-lg sm:text-xl max-w-2xl text-pretty ${isForest ? 'text-cream/75' : 'text-charcoal/70'}`}>
-              {intro}
+              {description}
             </p>
           )}
         </Reveal>
@@ -183,6 +187,8 @@ export function PageHero({ eyebrow, title, intro, variant = 'cream' }: PageHeroP
     </section>
   );
 }
+
+export const PageHeader = PageHero;
 
 /**
  * Botanical decorative line — a subtle organic SVG element.

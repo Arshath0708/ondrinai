@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { navItems, siteConfig, VOLUNTEER_FORM_URL } from '@/config/site';
+import { navItems, siteConfig, WHATSAPP_COMMUNITY_URL } from '@/config/site';
 import { Logo } from '@/components/Logo';
 
 export function Header() {
@@ -40,26 +40,30 @@ export function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-off-white/95 backdrop-blur-md shadow-sm border-b border-forest/10'
-            : 'bg-off-white border-b border-transparent'
+            ? 'bg-off-white/95 backdrop-blur-md shadow-md border-b border-forest/15'
+            : 'bg-off-white border-b border-forest/10'
         }`}
       >
         <div className="container-max container-px">
-          <div className="flex items-center justify-between h-16 sm:h-20">
-            <Link to="/" className="flex items-center gap-2 group" aria-label="ONDRINAI home">
-              <Logo variant="dark" className="group-hover:opacity-80 transition-opacity" />
+          <div className="flex items-center justify-between h-20 sm:h-24">
+            <Link to="/" className="flex items-center gap-2 group py-2" aria-label="ONDRINAI home">
+              <Logo variant="dark" size="md" className="group-hover:opacity-90 transition-opacity" />
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Main navigation">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-sm font-semibold tracking-wide transition-colors duration-200 relative py-2 ${
+                  className={`text-xs xl:text-sm font-semibold tracking-wide transition-colors duration-200 relative py-2 ${
                     isActive(item.path)
-                      ? 'text-forest'
+                      ? 'text-forest font-bold'
                       : 'text-charcoal/70 hover:text-forest'
+                  } ${
+                    item.path === '/donate'
+                      ? 'text-forest/90 font-bold'
+                      : ''
                   }`}
                 >
                   {item.label}
@@ -71,29 +75,23 @@ export function Header() {
             </nav>
 
             {/* Desktop CTA */}
-            <div className="hidden lg:block">
-              {VOLUNTEER_FORM_URL ? (
-                <a
-                  href={VOLUNTEER_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                >
-                  Join Us
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              ) : (
-                <Link to="/get-involved" className="btn-primary">
-                  Join Us
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              )}
+            <div className="hidden lg:flex items-center gap-3">
+              <a
+                href={WHATSAPP_COMMUNITY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-xs"
+                title="Join our volunteer WhatsApp community"
+              >
+                Join Us
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </div>
 
             {/* Mobile menu button */}
             <button
               type="button"
-              className="lg:hidden p-2 -mr-2 text-forest"
+              className="lg:hidden p-2 -mr-2 text-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-forest"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
@@ -108,42 +106,39 @@ export function Header() {
       {/* Mobile menu overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 top-0 z-40 bg-cream lg:hidden animate-fade-in"
+          className="fixed inset-0 top-0 z-40 bg-cream lg:hidden animate-fade-in flex flex-col justify-between overflow-y-auto"
           id="mobile-menu"
-          style={{ paddingTop: '3.5rem' }}
+          style={{ paddingTop: '5.5rem' }}
         >
-          <nav className="flex flex-col px-6 pt-8 gap-1" aria-label="Mobile navigation">
+          <nav className="flex flex-col px-6 pt-2 pb-4 gap-0.5" aria-label="Mobile navigation">
             {navItems.map((item, idx) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-2xl font-serif font-medium py-4 border-b border-forest/10 transition-colors animate-slide-in-right ${
-                  isActive(item.path) ? 'text-forest' : 'text-charcoal/80'
+                className={`text-xl sm:text-2xl font-serif font-medium py-3 border-b border-forest/10 transition-colors animate-slide-in-right ${
+                  isActive(item.path) ? 'text-forest font-semibold' : 'text-charcoal/80'
                 }`}
-                style={{ animationDelay: `${idx * 60}ms` }}
+                style={{ animationDelay: `${idx * 40}ms` }}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="mt-8">
-              {VOLUNTEER_FORM_URL ? (
-                <a
-                  href={VOLUNTEER_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary w-full"
-                >
-                  Join Our Community
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              ) : (
-                <Link to="/get-involved" className="btn-primary w-full">
-                  Join Our Community
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              )}
-            </div>
           </nav>
+
+          <div className="p-6 pb-10 border-t border-forest/10 bg-cream/80">
+            <p className="text-xs text-charcoal/60 mb-3 leading-relaxed">
+              {siteConfig.volunteerExplanation}
+            </p>
+            <a
+              href={WHATSAPP_COMMUNITY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary w-full justify-center"
+            >
+              Join Our Community
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       )}
     </>

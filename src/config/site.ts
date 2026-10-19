@@ -1,12 +1,20 @@
-import type { NavItem, SocialLink } from '@/types';
+import type { NavItem, SocialLink, InvolvementPath, FAQItem } from '@/types';
+
+/**
+ * Centralized asset registry for ONDRINAI.
+ * Points to real local assets stored under /assets/.
+ */
+export const ASSETS = {
+  logo: '/assets/ondrinai logo.jpeg',
+  activity1: '/assets/Activity 1.jpeg',
+  activity2: '/assets/Activity 2.jpeg',
+  activity3: '/assets/Activity 3.png',
+  founder: "/assets/Founder's image.jpeg",
+} as const;
 
 /**
  * Centralized site configuration for ONDRINAI.
- * Update these values to change brand details, social links, and form URLs.
- * Replace placeholder images by updating the image URLs in activityData.ts
- * and the hero/section images in page components.
  */
-
 export const siteConfig = {
   brandName: 'ONDRINAI',
   tagline: 'Together, We Create a Better Tomorrow.',
@@ -15,47 +23,58 @@ export const siteConfig = {
   coreMessage: 'Small actions. Shared responsibility. A better tomorrow.',
   announcement: 'Small actions. Shared responsibility. A better tomorrow.',
   email: 'ondrinaicommunity@gmail.com',
+  founderEmail: 'a.arshathabdulla@gmail.com',
+  founderPhone: '+91 84288 58856',
+  founderPhoneTel: '+918428858856',
+  founderName: 'Arshath Abdulla A',
+  founderRole: 'Founder, ONDRINAI',
   location: 'Madurai, Tamil Nadu, India',
-  description:
-    'ONDRINAI is a student-led community initiative in Madurai, Tamil Nadu, bringing people together to care for communities, protect the environment, and create meaningful change through collective action.',
   foundedLocation: 'Madurai, Tamil Nadu',
+  description:
+    'ONDRINAI is a community-led social initiative in Madurai bringing people together to care for communities, protect our environment, and create meaningful change through collective action.',
+  volunteerExplanation:
+    'Join our volunteer community to hear about activities, share ideas, and participate when you can.',
 };
 
 /**
- * Volunteer registration form URL.
- * Replace VOLUNTEER_FORM_URL with the actual Google Form link when available.
- * Until then, the Get Involved page shows a mailto fallback.
+ * Primary volunteer conversion path: Official ONDRINAI WhatsApp volunteer community invitation.
  */
-export const VOLUNTEER_FORM_URL = '';
+export const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/E0eAFqETwUuHU41EH1ijZ9';
+export const VOLUNTEER_COMMUNITY_URL = WHATSAPP_COMMUNITY_URL;
+export const VOLUNTEER_FORM_URL = WHATSAPP_COMMUNITY_URL;
 
 /**
- * Social media profile URLs.
- * Replace these placeholders with the actual URLs when verified.
+ * Payment & Direct UPI Contribution Configuration.
+ * 
+ * IMPORTANT: To activate live UPI payments, enter the verified ONDRINAI UPI VPA / Merchant ID
+ * below and set isEnabled to true. When isEnabled is false or upiId is blank, direct payment
+ * buttons will remain gracefully disabled with clear instructions to coordinate directly.
+ */
+export const paymentConfig = {
+  isEnabled: false, // Set to true once verified official UPI details are confirmed
+  upiId: '', // e.g., 'ondrinai@upi' or verified merchant VPA
+  recipientName: 'ONDRINAI Community Initiative',
+  merchantCode: '',
+  transactionNotePrefix: 'Contribution for ONDRINAI',
+  notice:
+    'Official direct UPI payments are currently being configured with our receiving account. You can review contribution amounts below and coordinate directly with our team.',
+};
+
+/**
+ * Social media links.
  */
 export const socialLinks: SocialLink[] = [
   {
     label: 'Instagram',
     handle: '@ondrinai',
-    url: '', // INSTAGRAM_URL
+    url: 'https://www.instagram.com/reel/DcjDeSazK4K/',
     icon: 'instagram',
   },
   {
-    label: 'Facebook',
-    handle: 'ONDRINAI',
-    url: '', // FACEBOOK_URL
+    label: 'WhatsApp',
+    handle: 'Volunteer Community',
+    url: WHATSAPP_COMMUNITY_URL,
     icon: 'facebook',
-  },
-  {
-    label: 'YouTube',
-    handle: 'ONDRINAI',
-    url: '', // YOUTUBE_URL
-    icon: 'youtube',
-  },
-  {
-    label: 'LinkedIn',
-    handle: 'ONDRINAI',
-    url: '', // LINKEDIN_URL
-    icon: 'linkedin',
   },
 ];
 
@@ -63,7 +82,10 @@ export const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Our Work', path: '/activities' },
+  { label: 'Gallery', path: '/gallery' },
+  { label: 'Transparency', path: '/transparency' },
   { label: 'Get Involved', path: '/get-involved' },
+  { label: 'Contribute', path: '/donate' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -71,118 +93,136 @@ export const pillars = [
   {
     id: 'feed',
     name: 'FEED',
-    title: 'Share food, care, and meaningful moments with people who need support.',
+    title: 'Food, care, and community support.',
     description:
-      'Food distribution initiatives that bring nourishment and dignity to people in need, while creating moments of genuine human connection.',
-    image:
-      'https://images.pexels.com/photos/6646952/pexels-photo-6646952.jpeg?auto=compress&cs=tinysrgb&w=800',
-    imageAlt: 'Volunteers packing food and aid boxes during a community drive',
+      'Sharing meals, providing nourishment, and spending meaningful time with people and animals who need care and companionship.',
+    image: ASSETS.activity1,
+    imageAlt: 'ONDRINAI volunteers during Activity 001 food distribution',
     link: '/activities?category=FEED',
     icon: 'heart',
   },
   {
     id: 'plant',
     name: 'PLANT',
-    title: 'Take environmental action through tree planting, Panai seeds, and responsible community participation.',
+    title: 'Environmental action, native trees, and Panai seed planting.',
     description:
-      'Environmental initiatives focused on planting native seeds and trees, contributing to local ecosystems through collective, hands-on effort.',
-    image:
-      'https://images.pexels.com/photos/36185282/pexels-photo-36185282.jpeg?auto=compress&cs=tinysrgb&w=800',
-    imageAlt: 'Hands holding a small plant seedling in soil',
+      'Environmental initiatives focused on planting native seeds and trees to restore local ecosystems through collective hands-on action.',
+    image: ASSETS.activity2,
+    imageAlt: 'ONDRINAI volunteers planting Panai seeds during Activity 002',
     link: '/activities?category=PLANT',
     icon: 'sprout',
   },
   {
     id: 'build',
     name: 'BUILD',
-    title: 'Bring people together through ideas, awareness, education, and initiatives that strengthen communities.',
+    title: 'Community development, education, awareness, and meaningful initiatives.',
     description:
-      'Community development through awareness, education, and meaningful initiatives that build lasting connections and shared responsibility.',
-    image:
-      'https://images.pexels.com/photos/5029855/pexels-photo-5029855.jpeg?auto=compress&cs=tinysrgb&w=800',
-    imageAlt: 'Group of volunteers working together outdoors',
+      'Strengthening communities through shared initiatives, educational awareness, and long-term collective responsibility.',
+    image: ASSETS.activity3,
+    imageAlt: 'ONDRINAI volunteers caring for community during Activity 003',
     link: '/activities?category=BUILD',
     icon: 'users',
   },
+  {
+    id: 'respond',
+    name: 'RESPOND',
+    title: 'Timely community support, animal welfare, and grassroots action.',
+    description:
+      'Stepping forward during local community emergencies, responsible street animal feeding, and rapid ground support where immediate help is required.',
+    image: ASSETS.activity1,
+    imageAlt: 'Community response and grassroots aid in Madurai',
+    link: '/activities?category=RESPOND',
+    icon: 'shield-alert',
+  },
 ] as const;
 
-export const involvementPaths = [
+export const involvementPaths: InvolvementPath[] = [
   {
     id: 'ground-work',
     label: 'GROUND WORK',
     description:
-      'Participate in food distribution, environmental activities, and community initiatives.',
-    icon: 'footprints' as const,
+      'Participate on the ground in food distribution, environmental seed planting, and direct community care activities in Madurai.',
+    icon: 'footprints',
   },
   {
     id: 'financial',
     label: 'FINANCIAL CONTRIBUTIONS',
     description:
-      'Support specific activities through voluntary contributions, with clear communication about their intended use.',
-    icon: 'hand-coins' as const,
+      'Voluntarily support specific, documented activity requirements with clear transparency on how funds are utilized. Contributions are not tax-deductible.',
+    icon: 'hand-coins',
   },
   {
     id: 'material',
     label: 'MATERIAL CONTRIBUTIONS',
     description:
-      'Help with food, saplings, seeds, supplies, and other verified activity requirements.',
-    icon: 'package' as const,
+      'Contribute food provisions, seeds, saplings, packaging, logistics tools, and other confirmed supplies needed for an upcoming initiative.',
+    icon: 'package',
   },
   {
     id: 'skills',
     label: 'SKILLS & PARTNERSHIPS',
     description:
-      'Contribute design, photography, communication, outreach, logistics, professional skills, or organizational partnerships.',
-    icon: 'sparkles' as const,
+      'Contribute design, photography, video editing, community outreach, coordination, documentation, or collaborate as an organization.',
+    icon: 'sparkles',
   },
 ];
 
-export const faqItems = [
+export const faqItems: FAQItem[] = [
   {
-    question: 'Do I need to contribute money?',
+    question: 'Do I need to contribute money to participate?',
     answer:
-      'No. Your time, effort, skills, and willingness to help are just as valuable. Participation does not require a financial contribution.',
+      'No. You do not need to contribute money to make a difference. Your time, energy, skills, and presence on the ground are equally valuable.',
   },
   {
-    question: 'Can I join if I have limited time?',
+    question: 'How do I join as a volunteer?',
     answer:
-      'Yes, subject to activity needs. We work with varying schedules and will communicate opportunities through our volunteer channels.',
+      'You can join our official WhatsApp volunteer group through the link on this website. That is where we announce upcoming activities and coordinate with everyone.',
   },
   {
     question: 'Where does ONDRINAI operate?',
     answer:
-      'Madurai, Tamil Nadu. Any expansion to new locations will be announced when confirmed.',
+      'ONDRINAI is based in Madurai, Tamil Nadu, India. Activities are currently organized locally across Madurai and surrounding areas.',
   },
   {
-    question: 'How will I hear about activities?',
+    question: 'Who runs ONDRINAI?',
     answer:
-      'Through our official communication channels and volunteer group. Once you register, we will keep you informed about upcoming activities.',
+      'ONDRINAI was founded by Arshath Abdulla A as a student-led community initiative in Madurai. It operates on the shared philosophy: "Not one person. Not one team. All of us, together."',
+  },
+  {
+    question: 'Are financial contributions tax-exempt or certified?',
+    answer:
+      'No. ONDRINAI is an independent, community-led social initiative and does not claim registered charitable status, 80G tax exemptions, or audited financial certifications. All activity expenses are reported transparently in our public ledger.',
+  },
+  {
+    question: 'How are contributions used?',
+    answer:
+      'Contributions are utilized directly toward the verified ground costs of our activities (such as food provisions, native seeds, and essential supplies). We maintain an open activity ledger on our Transparency page.',
   },
 ];
 
 export const values = [
   {
     name: 'Humanity',
-    description: 'Treat people with dignity.',
+    description: 'Treat every individual with genuine dignity, compassion, and respect.',
   },
   {
     name: 'Unity',
-    description: 'Work across social, religious, and community differences.',
+    description: 'Bring diverse people together across all backgrounds for shared positive action.',
   },
   {
     name: 'Responsibility',
-    description: 'Make honest commitments and follow through.',
+    description: 'Make honest commitments, follow through diligently, and act with integrity.',
   },
   {
     name: 'Transparency',
-    description: 'Communicate what was done and how contributions were used.',
+    description: 'Report what was done and account for all activity costs openly and truthfully.',
   },
   {
     name: 'Consistency',
-    description: 'Prefer sustainable action over short-lived publicity.',
+    description: 'Focus on steady, sustainable ground efforts over short-lived publicity.',
   },
   {
     name: 'Collaboration',
-    description: 'Work with volunteers, local communities, and organizations.',
+    description: 'Partner with volunteers, grassroots movements, and community organizations.',
   },
 ];
