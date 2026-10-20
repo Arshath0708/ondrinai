@@ -10,6 +10,7 @@ export const ASSETS = {
   activity2: '/assets/Activity 2.jpeg',
   activity3: '/assets/Activity 3.png',
   founder: "/assets/Founder's image.jpeg",
+  avatar: '/assets/avatar-guide.jpg',
   dog: '/assets/dog.jpg',
 } as const;
 
@@ -72,6 +73,12 @@ export const paymentConfig = {
   transactionNotePrefix: 'ONDRINAI Community Aid',
   notice:
     'Direct UPI & Google Pay enabled. 100% of your contribution goes directly to on-ground supplies with zero processing deductions.',
+};
+
+export const UPI_CONFIG = {
+  upiId: paymentConfig.upiId,
+  merchantPhone: paymentConfig.gpayNumber,
+  merchantName: paymentConfig.recipientName,
 };
 
 /**

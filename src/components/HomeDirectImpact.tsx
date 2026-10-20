@@ -293,14 +293,14 @@ export function HomeDirectImpact() {
             const isWater = cause.category === 'WATER';
 
             return (
-              <Reveal key={cause.id} delay={idx * 60}>
+              <Reveal key={cause.id} delay={idx * 50}>
                 <div
-                  className={`border transition-all duration-300 rounded-2xl overflow-hidden flex flex-col justify-between group ${
+                  className={`card-advanced card-sheen flex flex-col justify-between group ${
                     qty > 0
                       ? isWater
-                        ? 'bg-sky-50/40 dark:bg-slate-900 border-sky-500 shadow-[0_10px_30px_rgba(14,165,233,0.3)] ring-2 ring-sky-500/40'
-                        : 'bg-amber-50/40 dark:bg-slate-900 border-amber-500 dark:border-amber-500 shadow-[0_10px_30px_rgba(245,158,11,0.25)] ring-2 ring-amber-500/40'
-                      : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-amber-500/50 dark:hover:border-amber-500/40 hover:shadow-xl hover:-translate-y-1'
+                        ? 'border-sky-500 ring-2 ring-sky-500/40 shadow-[0_15px_40px_rgba(14,165,233,0.25)] -translate-y-1'
+                        : 'border-amber-500 ring-2 ring-amber-500/40 shadow-[0_15px_40px_rgba(245,158,11,0.25)] -translate-y-1'
+                      : ''
                   }`}
                 >
                   {/* Image & Price Header */}
@@ -563,10 +563,10 @@ export function HomeDirectImpact() {
         )}
 
         {/* Authenticity & Transparency Pillars */}
-        <Reveal delay={200}>
+        <Reveal delay={150}>
           <div className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-800 grid sm:grid-cols-3 gap-6 text-center sm:text-left">
-            <div className="bg-white dark:bg-slate-900 p-6 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-amber-200 dark:border-amber-800">
+            <div className="card-advanced card-sheen p-6 group">
+              <div className="w-10 h-10 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-amber-200 dark:border-amber-800/80 group-hover:scale-110 transition-transform duration-300">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <h4 className="font-serif font-bold text-slate-900 dark:text-white text-base">
@@ -577,8 +577,8 @@ export function HomeDirectImpact() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-slate-900 p-6 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-amber-200 dark:border-amber-800">
+            <div className="card-advanced card-sheen p-6 group">
+              <div className="w-10 h-10 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-amber-200 dark:border-amber-800/80 group-hover:scale-110 transition-transform duration-300">
                 <Check className="w-5 h-5" />
               </div>
               <h4 className="font-serif font-bold text-slate-900 dark:text-white text-base">
@@ -589,8 +589,8 @@ export function HomeDirectImpact() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-slate-900 p-6 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-amber-200 dark:border-amber-800">
+            <div className="card-advanced card-sheen p-6 group">
+              <div className="w-10 h-10 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-amber-200 dark:border-amber-800/80 group-hover:scale-110 transition-transform duration-300">
                 <Sparkles className="w-5 h-5" />
               </div>
               <h4 className="font-serif font-bold text-slate-900 dark:text-white text-base">

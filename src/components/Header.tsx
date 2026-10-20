@@ -13,8 +13,17 @@ export function Header() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 10);
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0) {
+        setScrollProgress(Math.min(100, Math.max(0, (scrollY / docHeight) * 100)));
+      }
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -50,14 +59,21 @@ export function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/95 dark:bg-[#0B0F19]/95 backdrop-blur-md shadow-sm dark:shadow-[0_4px_25px_rgba(0,0,0,0.6)] border-b border-slate-200/90 dark:border-slate-800'
-            : 'bg-white/90 dark:bg-[#0B0F19]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80'
+            ? 'bg-white/85 dark:bg-[#0B0F19]/85 backdrop-blur-xl shadow-[0_10px_35px_-10px_rgba(0,0,0,0.12)] dark:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.85)] border-b border-amber-500/25'
+            : 'bg-white/70 dark:bg-[#0B0F19]/70 backdrop-blur-md border-b border-slate-200/60 dark:border-white/5'
         }`}
       >
+        {/* Dynamic Scroll Progress Bar */}
+        <div
+          className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-amber-500 via-amber-400 to-orange-500 transition-all duration-75 origin-left z-20 shadow-[0_0_8px_rgba(245,158,11,0.6)]"
+          style={{ width: `${scrollProgress}%` }}
+          aria-hidden="true"
+        />
+
         <div className="container-max container-px">
           <div
             className={`flex items-center justify-between transition-all duration-300 ${
-              scrolled ? 'h-14 sm:h-16' : 'h-16 sm:h-18'
+              scrolled ? 'h-14 sm:h-15' : 'h-16 sm:h-18'
             }`}
           >
             {/* Left: Brand Identity */}

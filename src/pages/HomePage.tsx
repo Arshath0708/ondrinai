@@ -67,24 +67,51 @@ export function HomePage() {
                 </p>
               </Reveal>
 
-              {/* Thaagam Foundation 4-Point Verified Metric Proof Strip */}
-              <Reveal delay={200}>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 my-6 sm:my-8 p-3 sm:p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm">
-                  <div className="p-2 sm:p-2.5 text-center">
-                    <div className="text-2xl sm:text-3xl font-serif font-extrabold text-amber-600 dark:text-amber-400">25+</div>
-                    <div className="text-[11px] sm:text-xs font-sans text-slate-600 dark:text-slate-400 mt-0.5 leading-tight">Fresh Meals Shared</div>
+              {/* Thaagam Foundation 4-Point Verified Metric Proof Cards */}
+              <Reveal delay={180}>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5 my-6 sm:my-8">
+                  <div className="card-advanced card-sheen p-3 sm:p-4 text-center group">
+                    <div className="flex items-center justify-center gap-1.5 mb-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Meals</span>
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-serif font-extrabold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform">
+                      25+
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-sans text-slate-600 dark:text-slate-400 mt-1 leading-tight font-medium">Fresh Meals Shared</div>
                   </div>
-                  <div className="p-2 sm:p-2.5 text-center border-l border-slate-200 dark:border-slate-800">
-                    <div className="text-2xl sm:text-3xl font-serif font-extrabold text-orange-600 dark:text-orange-400">2,000+</div>
-                    <div className="text-[11px] sm:text-xs font-sans text-slate-600 dark:text-slate-400 mt-0.5 leading-tight">Panai Seeds Sown</div>
+
+                  <div className="card-advanced card-sheen p-3 sm:p-4 text-center group">
+                    <div className="flex items-center justify-center gap-1.5 mb-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">Trees</span>
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-serif font-extrabold bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform">
+                      2,000+
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-sans text-slate-600 dark:text-slate-400 mt-1 leading-tight font-medium">Panai Seeds Sown</div>
                   </div>
-                  <div className="p-2 sm:p-2.5 text-center border-l border-slate-200 dark:border-slate-800">
-                    <div className="text-2xl sm:text-3xl font-serif font-extrabold text-amber-600 dark:text-amber-400">₹0</div>
-                    <div className="text-[11px] sm:text-xs font-sans text-slate-600 dark:text-slate-400 mt-0.5 leading-tight">Admin Deductions</div>
+
+                  <div className="card-advanced card-sheen p-3 sm:p-4 text-center group">
+                    <div className="flex items-center justify-center gap-1.5 mb-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Zero Cut</span>
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-serif font-extrabold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform">
+                      ₹0
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-sans text-slate-600 dark:text-slate-400 mt-1 leading-tight font-medium">Admin Deductions</div>
                   </div>
-                  <div className="p-2 sm:p-2.5 text-center border-l border-slate-200 dark:border-slate-800">
-                    <div className="text-2xl sm:text-3xl font-serif font-extrabold text-sky-600 dark:text-sky-400">100%</div>
-                    <div className="text-[11px] sm:text-xs font-sans text-slate-600 dark:text-slate-400 mt-0.5 leading-tight">Ground Verified</div>
+
+                  <div className="card-advanced card-sheen p-3 sm:p-4 text-center group">
+                    <div className="flex items-center justify-center gap-1.5 mb-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse" />
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Audit</span>
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-serif font-extrabold bg-gradient-to-r from-sky-600 to-blue-600 dark:from-sky-400 dark:to-blue-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform">
+                      100%
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-sans text-slate-600 dark:text-slate-400 mt-1 leading-tight font-medium">Ground Verified</div>
                   </div>
                 </div>
               </Reveal>
@@ -132,7 +159,7 @@ export function HomePage() {
                   <div className="absolute -inset-4 bg-gradient-to-tr from-amber-500/10 via-orange-600/10 to-amber-500/10 rounded-3xl blur-2xl opacity-60 pointer-events-none" />
 
                   {/* Main Container */}
-                  <div className="relative bg-white dark:bg-slate-900 rounded-3xl p-4 sm:p-6 border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden">
+                  <div className="card-advanced card-sheen p-4 sm:p-6 shadow-2xl overflow-hidden">
                     
                     {/* Top Switcher Bar */}
                     <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -301,14 +328,14 @@ export function HomePage() {
               const isReversed = i % 2 === 1;
               return (
                 <Reveal key={pillar.id} delay={i * 100}>
-                  <div className={`grid lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xs hover:shadow-xl transition-shadow ${isReversed ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+                  <div className={`card-advanced card-sheen grid lg:grid-cols-12 gap-8 lg:gap-12 items-center p-6 sm:p-8 lg:p-10 ${isReversed ? 'lg:[&>*:first-child]:order-2' : ''}`}>
                     <div className="lg:col-span-7">
-                      <div className="relative overflow-hidden aspect-[16/10] bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800">
+                      <div className="relative overflow-hidden aspect-[16/10] bg-slate-950 rounded-2xl border border-slate-200/80 dark:border-white/10 group">
                         <img
                           src={pillar.image}
                           alt={pillar.imageAlt}
                           loading="lazy"
-                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-700 ease-editorial hover:scale-106"
                         />
                       </div>
                     </div>
@@ -530,10 +557,10 @@ export function HomePage() {
               const Icon = involvementIcons[path.icon];
               return (
                 <Reveal key={path.id} delay={i * 80}>
-                  <div className="border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-7 sm:p-8 rounded-2xl shadow-xs hover:shadow-xl transition-all h-full flex flex-col justify-between">
+                  <div className="card-advanced card-sheen p-7 sm:p-8 h-full flex flex-col justify-between group">
                     <div>
                       <div className="flex items-center gap-4 mb-4">
-                        <span className="inline-flex items-center justify-center w-12 h-12 shrink-0 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-amber-700 dark:text-amber-300">
+                        <span className="inline-flex items-center justify-center w-12 h-12 shrink-0 rounded-2xl bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-500/30 text-amber-700 dark:text-amber-300 shadow-sm group-hover:scale-110 transition-transform duration-300">
                           {Icon && <Icon className="w-5 h-5" />}
                         </span>
                         <h3 className="text-base font-sans font-bold tracking-wide text-slate-900 dark:text-white uppercase">

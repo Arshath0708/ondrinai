@@ -29,7 +29,7 @@ export function FloatingImpactBar() {
   return (
     <aside
       aria-label="Quick sponsorship dock"
-      className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-40 animate-fade-in"
+      className="fixed bottom-4 left-4 right-4 sm:right-auto sm:left-6 sm:max-w-sm z-30 animate-fade-in"
     >
       <div className="glass-hud text-white p-3.5 sm:p-4 rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.45)] border border-amber-500/40 flex items-center justify-between gap-3 ring-1 ring-amber-400/20 backdrop-blur-xl">
         <div className="flex items-center gap-3 min-w-0">

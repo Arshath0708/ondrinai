@@ -218,12 +218,12 @@ export function DonatePage() {
                   return (
                     <div
                       key={cause.id}
-                      className={`flex flex-col justify-between p-5 rounded-2xl border transition-all duration-200 ${
+                      className={`card-advanced card-sheen flex flex-col justify-between p-5 rounded-2xl border transition-all duration-300 ${
                         isSelected
                           ? isWater
-                            ? 'bg-sky-50/40 dark:bg-sky-950/30 border-sky-500 dark:border-sky-400 shadow-md ring-2 ring-sky-500/20'
-                            : 'bg-amber-50/40 dark:bg-amber-950/30 border-amber-500 dark:border-amber-500 shadow-md ring-2 ring-amber-500/20'
-                          : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 shadow-xs'
+                            ? 'bg-sky-50/40 dark:bg-sky-950/30 border-sky-500 dark:border-sky-400 shadow-md ring-2 ring-sky-500/20 -translate-y-1'
+                            : 'bg-amber-50/40 dark:bg-amber-950/30 border-amber-500 dark:border-amber-500 shadow-md ring-2 ring-amber-500/20 -translate-y-1'
+                          : 'hover:border-amber-500/40 hover:-translate-y-1'
                       }`}
                     >
                       <div>
