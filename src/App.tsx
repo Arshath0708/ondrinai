@@ -5,7 +5,6 @@ import { AboutPage } from '@/pages/AboutPage';
 import { ActivitiesPage } from '@/pages/ActivitiesPage';
 import { ActivityDetailPage } from '@/pages/ActivityDetailPage';
 import { GetInvolvedPage } from '@/pages/GetInvolvedPage';
-import { TransparencyPage } from '@/pages/TransparencyPage';
 import { ContactPage } from '@/pages/ContactPage';
 import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage';
 import { GalleryPage } from '@/pages/GalleryPage';
@@ -23,7 +22,6 @@ export default function App() {
           <Route path="/activities/:slug" element={<ActivityDetailPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/get-involved" element={<GetInvolvedPage />} />
-          <Route path="/transparency" element={<TransparencyPage />} />
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />

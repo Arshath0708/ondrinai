@@ -1,4 +1,4 @@
-export type ActivityCategory = 'FEED' | 'PLANT' | 'BUILD' | 'RESPOND';
+export type ActivityCategory = 'FEED' | 'PLANT' | 'BUILD' | 'RESPOND' | 'WATER';
 
 export interface NavItem {
   label: string;
@@ -9,7 +9,7 @@ export interface SocialLink {
   label: string;
   url: string;
   handle: string;
-  icon: 'instagram' | 'facebook' | 'youtube' | 'linkedin';
+  icon: 'instagram' | 'facebook' | 'youtube' | 'linkedin' | 'whatsapp';
 }
 
 export interface ActivityPhoto {
@@ -104,7 +104,7 @@ export interface ActivitySponsorship {
 
 export interface GalleryItem {
   id: string;
-  title: string;
+  title?: string;
   category: ActivityCategory;
   image: string;
   alt: string;
@@ -121,4 +121,14 @@ export interface PartnerItem {
   description: string;
   collaborationDetail?: string;
   activitySlug?: string;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  bio?: string;
+  badge?: string;
+  location?: string;
 }

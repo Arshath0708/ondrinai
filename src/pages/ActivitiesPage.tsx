@@ -7,9 +7,9 @@ import { ActivityCard } from '@/components/ActivityCard';
 import { activities } from '@/data/activities';
 import { WHATSAPP_COMMUNITY_URL, ASSETS } from '@/config/site';
 
-type FilterCategory = 'ALL' | 'FEED' | 'PLANT' | 'BUILD' | 'RESPOND';
+type FilterCategory = 'ALL' | 'FEED' | 'PLANT' | 'WATER' | 'BUILD' | 'RESPOND';
 
-const filterOptions: FilterCategory[] = ['ALL', 'FEED', 'PLANT', 'BUILD', 'RESPOND'];
+const filterOptions: FilterCategory[] = ['ALL', 'FEED', 'PLANT', 'WATER', 'BUILD', 'RESPOND'];
 
 export function ActivitiesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -50,14 +50,14 @@ export function ActivitiesPage() {
       />
 
       {/* Hero */}
-      <section className="bg-cream pt-32 pb-12 sm:pt-36 sm:pb-16 border-b border-forest/10">
-        <div className="container-max container-px">
+      <section className="bg-slate-50 dark:bg-[#03150D] pt-32 pb-12 sm:pt-36 sm:pb-16 border-b border-slate-200/80 dark:border-white/10 relative cyber-grid">
+        <div className="container-max container-px relative z-10">
           <Reveal>
-            <p className="eyebrow text-accent-dark mb-5">Activity Archive</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-forest text-balance max-w-3xl">
+            <p className="eyebrow text-emerald-700 dark:text-emerald-400 mb-5 font-mono font-bold">Activity Archive &bull; Documented On-Ground Action</p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-slate-900 dark:text-white text-balance max-w-3xl tracking-tight">
               Action speaks louder than promises.
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-charcoal/75 max-w-2xl text-pretty leading-relaxed">
+            <p className="mt-6 text-lg sm:text-xl text-slate-700 dark:text-slate-300 max-w-2xl text-pretty leading-relaxed">
               We believe meaningful change begins with doing what we can, where we are. Every initiative here has been completed directly on the ground.
             </p>
           </Reveal>
@@ -65,13 +65,13 @@ export function ActivitiesPage() {
       </section>
 
       {/* Activities with filters */}
-      <section className="bg-off-white py-16 sm:py-20">
+      <section className="bg-white dark:bg-[#02110A] py-16 sm:py-20">
         <div className="container-max container-px">
           {/* Category Filters */}
           <Reveal>
             <div className="flex flex-wrap items-center justify-between gap-4 mb-12">
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                <span className="text-xs uppercase tracking-wider font-semibold text-charcoal/50 mr-2">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+                <span className="text-xs uppercase tracking-wider font-bold text-slate-500 dark:text-slate-400 mr-2 font-mono">
                   Filter:
                 </span>
                 {filterOptions.map((option) => (
@@ -79,10 +79,10 @@ export function ActivitiesPage() {
                     key={option}
                     type="button"
                     onClick={() => handleFilter(option)}
-                    className={`px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-200 border ${
+                    className={`px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-200 rounded-xl border ${
                       activeFilter === option
-                        ? 'bg-forest text-cream border-forest shadow-sm'
-                        : 'bg-cream/70 text-charcoal/70 hover:bg-cream hover:text-forest border-forest/15'
+                        ? 'bg-slate-900 dark:bg-emerald-400 text-white dark:text-slate-950 border-slate-900 dark:border-emerald-400 shadow-md font-bold'
+                        : 'bg-slate-50 dark:bg-[#031C11] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#042818] hover:text-emerald-700 dark:hover:text-emerald-300 border-slate-200 dark:border-white/10'
                     }`}
                     aria-pressed={activeFilter === option}
                   >
@@ -92,9 +92,9 @@ export function ActivitiesPage() {
               </div>
               <Link
                 to="/gallery"
-                className="btn-outline text-xs inline-flex items-center gap-1.5 py-2 px-3.5"
+                className="btn-secondary rounded-xl text-xs inline-flex items-center gap-1.5 py-2.5 px-4"
               >
-                <Camera className="w-3.5 h-3.5" />
+                <Camera className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Visual Photo Gallery</span>
               </Link>
             </div>
@@ -110,14 +110,14 @@ export function ActivitiesPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-20 bg-cream/30 border border-forest/10 p-8">
-              <p className="text-charcoal/60 font-serif text-lg">
+            <div className="text-center py-20 bg-slate-50 dark:bg-[#031C11] border border-slate-200 dark:border-white/10 rounded-2xl p-8">
+              <p className="text-slate-500 dark:text-slate-400 font-serif text-lg">
                 No activities documented in the {activeFilter} category yet.
               </p>
               <button
                 type="button"
                 onClick={() => handleFilter('ALL')}
-                className="mt-4 btn-secondary text-xs"
+                className="mt-4 btn-secondary text-xs rounded-xl"
               >
                 View all activities
               </button>
@@ -131,8 +131,8 @@ export function ActivitiesPage() {
         copy="Join our volunteer WhatsApp community to be notified when the next food drive, seed planting, or community initiative is scheduled."
         primaryLabel="Join Volunteer Community"
         primaryLink={WHATSAPP_COMMUNITY_URL}
-        secondaryLabel="Learn About Transparency"
-        secondaryLink="/transparency"
+        secondaryLabel="Sponsor a Meal • ₹30"
+        secondaryLink="/donate"
         variant="dark"
       />
     </>

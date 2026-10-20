@@ -49,14 +49,17 @@ export function GetInvolvedPage() {
       />
 
       {/* Hero */}
-      <section className="bg-cream pt-32 pb-16 sm:pt-36 sm:pb-20 border-b border-forest/10">
-        <div className="container-max container-px">
+      <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-[#03150D] dark:via-[#02140C] dark:to-[#03150D] pt-32 pb-16 sm:pt-36 sm:pb-20 border-b border-slate-200/80 dark:border-white/10 cyber-grid">
+        <div className="container-max container-px relative z-10">
           <Reveal>
-            <p className="eyebrow text-accent-dark mb-5">Get Involved</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-forest text-balance max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-mono uppercase tracking-widest mb-5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Decentralized Civic Impact</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-900 dark:text-white text-balance max-w-3xl">
               Your contribution can take many forms.
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-charcoal/80 max-w-2xl text-pretty leading-relaxed">
+            <p className="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl text-pretty leading-relaxed">
               You don&rsquo;t need to contribute money to make a difference. Every sincere effort, hour of time, and creative idea counts.
             </p>
           </Reveal>
@@ -64,18 +67,19 @@ export function GetInvolvedPage() {
       </section>
 
       {/* Primary Volunteer WhatsApp CTA Banner */}
-      <section className="bg-forest text-cream py-12 border-y border-forest/20">
-        <div className="container-max container-px">
+      <section className="relative bg-[#02140C] text-white py-14 border-y border-emerald-500/20 cyber-grid-dark">
+        <div className="container-max container-px relative z-10">
           <Reveal>
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 bg-deep-green/60 p-8 sm:p-10 border border-cream/15">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 bg-emerald-950/40 p-8 sm:p-10 rounded-2xl border border-emerald-500/30 backdrop-blur-md shadow-2xl">
               <div className="max-w-2xl">
-                <span className="text-xs uppercase tracking-wider text-sage font-mono font-semibold">
+                <span className="text-xs uppercase tracking-wider text-emerald-400 font-mono font-semibold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                   Official Volunteer Channel
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-serif font-medium mt-2 text-cream">
+                <h2 className="text-2xl sm:text-3xl font-serif font-bold mt-2 text-white">
                   Join Our Volunteer WhatsApp Community
                 </h2>
-                <p className="text-sm sm:text-base text-cream/75 mt-3 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-300 mt-3 leading-relaxed">
                   {siteConfig.volunteerExplanation}
                 </p>
               </div>
@@ -84,9 +88,9 @@ export function GetInvolvedPage() {
                   href={WHATSAPP_COMMUNITY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-light inline-flex items-center gap-2.5 text-sm sm:text-base"
+                  className="btn-donate inline-flex items-center gap-2.5 text-sm sm:text-base py-3.5 px-7 rounded-xl font-bold shadow-lg hover:scale-105 transition-transform"
                 >
-                  <MessageCircle className="w-5 h-5 text-forest" />
+                  <MessageCircle className="w-5 h-5 text-white" />
                   Join Volunteer Group
                   <ArrowRight className="w-4 h-4" />
                 </a>
@@ -97,7 +101,7 @@ export function GetInvolvedPage() {
       </section>
 
       {/* Four Participation Paths */}
-      <section className="bg-off-white py-20 sm:py-28">
+      <section className="bg-slate-50 dark:bg-[#03160E] py-20 sm:py-28">
         <div className="container-max container-px">
           <Reveal>
             <SectionHeading
@@ -114,61 +118,69 @@ export function GetInvolvedPage() {
               const isReversed = i % 2 === 1;
               return (
                 <Reveal key={path.letter} delay={i * 80}>
-                  <div className={`grid lg:grid-cols-12 gap-8 items-center bg-cream/40 border border-forest/15 p-7 sm:p-9 ${isReversed ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+                  <div className={`grid lg:grid-cols-12 gap-8 items-center bg-white dark:bg-[#031C11] border border-slate-200/80 dark:border-white/10 rounded-2xl p-7 sm:p-9 shadow-xs hover:border-emerald-500/30 transition-all ${isReversed ? 'lg:[&>*:first-child]:order-2' : ''}`}>
                     <div className="lg:col-span-8">
                       <div className="flex items-start gap-5">
-                        <span className="inline-flex items-center justify-center w-12 h-12 shrink-0 bg-forest text-cream shadow-sm">
+                        <span className="inline-flex items-center justify-center w-12 h-12 shrink-0 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 rounded-xl shadow-xs">
                           <Icon className="w-6 h-6" />
                         </span>
                         <div>
                           <div className="flex items-center gap-3 mb-1">
-                            <span className="text-xs font-mono font-bold text-accent-dark tracking-wider">
+                            <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 tracking-wider">
                               PATH {path.letter}
                             </span>
-                            <span className="text-xs text-charcoal/50 uppercase tracking-wider font-semibold">
+                            <span className="text-xs text-slate-400 dark:text-slate-500 uppercase tracking-wider font-semibold font-mono">
                               &bull; {path.subtitle}
                             </span>
                           </div>
-                          <h3 className="text-xl sm:text-2xl font-serif font-medium text-forest">
+                          <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 dark:text-white">
                             {path.title}
                           </h3>
-                          <p className="mt-3 text-base text-charcoal/75 leading-relaxed text-pretty">
+                          <p className="mt-3 text-base text-slate-600 dark:text-slate-300 leading-relaxed text-pretty">
                             {path.description}
                           </p>
                         </div>
                       </div>
                     </div>
                     <div className="lg:col-span-4">
-                      <div className="bg-off-white border border-forest/10 p-6 text-center shadow-sm">
+                      <div className="bg-slate-50 dark:bg-[#02140C] border border-slate-200/80 dark:border-white/10 rounded-xl p-6 text-center shadow-xs">
                         {path.letter === 'B' ? (
                           <>
-                            <p className="text-xs font-semibold uppercase tracking-wider text-forest mb-1">
-                              Transparent Causes
+                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 mb-1">
+                              Transparent Micro-Causes
                             </p>
-                            <p className="text-xs text-charcoal/60 leading-relaxed">
-                              Choose specific causes or sponsor an entire activity.
+                            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                              Choose specific causes or sponsor an entire meal drive directly.
                             </p>
-                            <Link
-                              to="/donate"
-                              className="btn-primary mt-4 text-xs w-full justify-center"
-                            >
-                              <span>View Contribution Causes</span>
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </Link>
+                            <div className="mt-4 flex flex-col gap-2">
+                              <Link
+                                to="/donate?cause_breakfast-person=1"
+                                className="btn-donate text-xs w-full justify-center py-2.5 rounded-lg font-bold flex items-center gap-1.5 shadow-md"
+                              >
+                                <span>⚡ Sponsor 1 Meal • ₹30</span>
+                                <ArrowRight className="w-3.5 h-3.5" />
+                              </Link>
+                              <Link
+                                to="/donate"
+                                className="text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-400 hover:text-emerald-900 dark:hover:text-emerald-300 transition-colors uppercase tracking-wider py-1"
+                              >
+                                View All 5 Causes
+                              </Link>
+                            </div>
                           </>
                         ) : path.letter === 'A' ? (
                           <>
-                            <p className="text-xs font-semibold uppercase tracking-wider text-forest mb-1">
+                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 mb-1">
                               Zero financial barrier
                             </p>
-                            <p className="text-xs text-charcoal/60 leading-relaxed">
+                            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                               Your presence, time, and sincere dedication matter most.
                             </p>
                             <a
                               href={WHATSAPP_COMMUNITY_URL}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="btn-primary mt-4 text-xs w-full justify-center"
+                              className="btn-primary mt-4 text-xs w-full justify-center rounded-xl py-2.5 font-semibold"
                             >
                               <span>Join via WhatsApp</span>
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -176,15 +188,15 @@ export function GetInvolvedPage() {
                           </>
                         ) : path.letter === 'C' ? (
                           <>
-                            <p className="text-xs font-semibold uppercase tracking-wider text-forest mb-1">
+                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 mb-1">
                               Direct Resources
                             </p>
-                            <p className="text-xs text-charcoal/60 leading-relaxed">
+                            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                               Coordinate seeds, food grains, or transport supplies.
                             </p>
                             <Link
                               to="/contact"
-                              className="btn-outline mt-4 text-xs w-full justify-center"
+                              className="btn-outline mt-4 text-xs w-full justify-center rounded-xl py-2.5 font-semibold"
                             >
                               <span>Coordinate Supplies</span>
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -192,15 +204,15 @@ export function GetInvolvedPage() {
                           </>
                         ) : (
                           <>
-                            <p className="text-xs font-semibold uppercase tracking-wider text-forest mb-1">
+                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 mb-1">
                               Shared Talents
                             </p>
-                            <p className="text-xs text-charcoal/60 leading-relaxed">
+                            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                               Lend technical, creative, or institutional partnership.
                             </p>
                             <Link
                               to="/contact"
-                              className="btn-outline mt-4 text-xs w-full justify-center"
+                              className="btn-outline mt-4 text-xs w-full justify-center rounded-xl py-2.5 font-semibold"
                             >
                               <span>Propose Partnership</span>
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -218,32 +230,32 @@ export function GetInvolvedPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-cream py-20 sm:py-24 border-t border-forest/10">
+      <section className="bg-white dark:bg-[#02110A] py-20 sm:py-24 border-t border-slate-200/80 dark:border-white/10">
         <div className="container-max container-px">
           <div className="grid lg:grid-cols-12 gap-10">
             <div className="lg:col-span-4">
               <Reveal>
                 <div className="flex items-center gap-2 mb-3">
-                  <HelpCircle className="w-5 h-5 text-accent-dark" />
-                  <p className="eyebrow text-accent-dark">Clarifications</p>
+                  <HelpCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  <p className="eyebrow text-emerald-600 dark:text-emerald-400 font-mono tracking-widest text-xs uppercase">Clarifications</p>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-serif font-medium text-forest">
+                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-white">
                   Frequently Asked Questions
                 </h2>
-                <p className="mt-4 text-sm text-charcoal/70 leading-relaxed">
+                <p className="mt-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   Have other questions about participating or partnering? Reach out to us directly through email or our WhatsApp group.
                 </p>
               </Reveal>
             </div>
             <div className="lg:col-span-8">
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {faqItems.map((faq, i) => (
                   <Reveal key={i} delay={i * 60}>
-                    <div className="bg-off-white border border-forest/10 p-6 shadow-sm">
-                      <h3 className="text-base sm:text-lg font-serif font-semibold text-forest mb-2">
+                    <div className="bg-slate-50 dark:bg-[#031C11] border border-slate-200/80 dark:border-white/10 rounded-2xl p-6 shadow-xs hover:border-emerald-500/40 transition-colors">
+                      <h3 className="text-base sm:text-lg font-serif font-bold text-slate-900 dark:text-white mb-2">
                         {faq.question}
                       </h3>
-                      <p className="text-sm text-charcoal/75 leading-relaxed">
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>

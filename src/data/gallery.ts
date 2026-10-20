@@ -1,45 +1,114 @@
 import type { GalleryItem } from '@/types';
-import { ASSETS } from '@/config/site';
 
 /**
- * Authentic ONDRINAI activity photographs for the dedicated Gallery page.
- * Uses genuine local assets stored under /public/assets/.
+ * Authentic ONDRINAI photo gallery data.
+ * Categorized directly by the folders in `/public/assets/gallery/`: Feed, Plant, Build.
+ * Clean image records for pure visual viewing.
  */
 export const galleryItems: GalleryItem[] = [
+  // Feed folder
   {
-    id: 'gallery-001',
-    title: 'Food Distribution to People in Need',
+    id: 'feed-01',
     category: 'FEED',
-    image: ASSETS.activity1,
-    alt: 'ONDRINAI volunteers during Activity 001 distributing freshly prepared idli meals in Madurai',
-    date: 'Activity 001',
-    location: 'Madurai, Tamil Nadu',
-    activitySlug: 'activity-001',
-    description:
-      'Our very first initiative — volunteers distributed fresh idli meals directly to 25 people on the ground in Madurai with an overall cost of ₹1,350.',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 144652.png',
+    alt: 'ONDRINAI community initiative photo',
   },
   {
-    id: 'gallery-002',
-    title: '2,000 Panai Seeds Sowing Initiative',
+    id: 'feed-02',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 144724.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'feed-04',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 144819.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'feed-05',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 144831.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'feed-06',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 144842.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'feed-07',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 144911.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'feed-08',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 144922.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'feed-09',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 145001.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'feed-10',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 145017.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'feed-11',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 145029.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'feed-12',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 145041.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'feed-13',
+    category: 'FEED',
+    image: '/assets/gallery/Feed/Screenshot 2026-10-19 145114.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+
+  // Plant folder
+  {
+    id: 'plant-01',
     category: 'PLANT',
-    image: ASSETS.activity2,
-    alt: 'ONDRINAI volunteers and youth collaborators planting 2,000 Panai seeds near Madurai-Chennai highway',
-    date: 'Activity 002',
-    location: 'Near Madurai–Chennai Highway, around Meenakshi Mission Hospital',
-    activitySlug: 'activity-002',
-    description:
-      'Joined hands with Ilam Makkal Iyakkam to plant 2,000 native Panai (palmyra) seeds along roadside embankments for long-term ecological conservation.',
+    image: '/assets/gallery/Plant/Screenshot 2026-10-19 145147.png',
+    alt: 'ONDRINAI community initiative photo',
   },
   {
-    id: 'gallery-003',
-    title: 'Old-Age Home Lunch & Companionship',
-    category: 'FEED',
-    image: ASSETS.activity3,
-    alt: 'ONDRINAI volunteers spending time and sharing a lunch meal with elderly residents in Madurai',
-    date: 'Activity 003',
-    location: 'Madurai, Tamil Nadu',
-    activitySlug: 'activity-003',
-    description:
-      'Sharing a meal and spending meaningful time with elderly residents in Madurai, reminding us that care is about human warmth and companionship.',
+    id: 'plant-02',
+    category: 'PLANT',
+    image: '/assets/gallery/Plant/Screenshot 2026-10-19 145155.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'plant-03',
+    category: 'PLANT',
+    image: '/assets/gallery/Plant/Screenshot 2026-10-19 145222.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'plant-04',
+    category: 'PLANT',
+    image: '/assets/gallery/Plant/Screenshot 2026-10-19 145243.png',
+    alt: 'ONDRINAI community initiative photo',
+  },
+  {
+    id: 'plant-05',
+    category: 'PLANT',
+    image: '/assets/gallery/Plant/Screenshot 2026-10-19 145255.png',
+    alt: 'ONDRINAI community initiative photo',
   },
 ];

@@ -10,6 +10,7 @@ export const ASSETS = {
   activity2: '/assets/Activity 2.jpeg',
   activity3: '/assets/Activity 3.png',
   founder: "/assets/Founder's image.jpeg",
+  dog: '/assets/dog.jpg',
 } as const;
 
 /**
@@ -34,6 +35,10 @@ export const siteConfig = {
     'ONDRINAI is a community-led social initiative in Madurai bringing people together to care for communities, protect our environment, and create meaningful change through collective action.',
   volunteerExplanation:
     'Join our volunteer community to hear about activities, share ideas, and participate when you can.',
+  linkedinUrl: 'https://www.linkedin.com/company/ondrinai-community',
+  facebookUrl: 'https://www.facebook.com/p/Ondrinai-61593641893262/',
+  youtubeUrl: 'https://www.youtube.com/@ondrinai',
+  instagramUrl: 'https://www.instagram.com/reel/DcjDeSazK4K/',
 };
 
 /**
@@ -44,6 +49,14 @@ export const VOLUNTEER_COMMUNITY_URL = WHATSAPP_COMMUNITY_URL;
 export const VOLUNTEER_FORM_URL = WHATSAPP_COMMUNITY_URL;
 
 /**
+ * Official social media channel URLs.
+ */
+export const LINKEDIN_URL = 'https://www.linkedin.com/company/ondrinai-community';
+export const FACEBOOK_URL = 'https://www.facebook.com/p/Ondrinai-61593641893262/';
+export const YOUTUBE_URL = 'https://www.youtube.com/@ondrinai';
+export const INSTAGRAM_URL = 'https://www.instagram.com/ondrinai';
+
+/**
  * Payment & Direct UPI Contribution Configuration.
  * 
  * IMPORTANT: To activate live UPI payments, enter the verified ONDRINAI UPI VPA / Merchant ID
@@ -51,13 +64,14 @@ export const VOLUNTEER_FORM_URL = WHATSAPP_COMMUNITY_URL;
  * buttons will remain gracefully disabled with clear instructions to coordinate directly.
  */
 export const paymentConfig = {
-  isEnabled: false, // Set to true once verified official UPI details are confirmed
-  upiId: '', // e.g., 'ondrinai@upi' or verified merchant VPA
-  recipientName: 'ONDRINAI Community Initiative',
+  isEnabled: true,
+  gpayNumber: '8428858856',
+  upiId: '8428858856@okaxis', // Live Google Pay Axis UPI handle
+  recipientName: 'Arshath Abdulla A (ONDRINAI)',
   merchantCode: '',
-  transactionNotePrefix: 'Contribution for ONDRINAI',
+  transactionNotePrefix: 'ONDRINAI Community Aid',
   notice:
-    'Official direct UPI payments are currently being configured with our receiving account. You can review contribution amounts below and coordinate directly with our team.',
+    'Direct UPI & Google Pay enabled. 100% of your contribution goes directly to on-ground supplies with zero processing deductions.',
 };
 
 /**
@@ -67,14 +81,32 @@ export const socialLinks: SocialLink[] = [
   {
     label: 'Instagram',
     handle: '@ondrinai',
-    url: 'https://www.instagram.com/reel/DcjDeSazK4K/',
+    url: INSTAGRAM_URL,
     icon: 'instagram',
+  },
+  {
+    label: 'LinkedIn',
+    handle: 'ondrinai-community',
+    url: LINKEDIN_URL,
+    icon: 'linkedin',
+  },
+  {
+    label: 'YouTube',
+    handle: '@ondrinai',
+    url: YOUTUBE_URL,
+    icon: 'youtube',
+  },
+  {
+    label: 'Facebook',
+    handle: 'Ondrinai',
+    url: FACEBOOK_URL,
+    icon: 'facebook',
   },
   {
     label: 'WhatsApp',
     handle: 'Volunteer Community',
     url: WHATSAPP_COMMUNITY_URL,
-    icon: 'facebook',
+    icon: 'whatsapp',
   },
 ];
 
@@ -83,7 +115,6 @@ export const navItems: NavItem[] = [
   { label: 'About', path: '/about' },
   { label: 'Our Work', path: '/activities' },
   { label: 'Gallery', path: '/gallery' },
-  { label: 'Transparency', path: '/transparency' },
   { label: 'Get Involved', path: '/get-involved' },
   { label: 'Contribute', path: '/donate' },
   { label: 'Contact', path: '/contact' },
@@ -191,12 +222,12 @@ export const faqItems: FAQItem[] = [
   {
     question: 'Are financial contributions tax-exempt or certified?',
     answer:
-      'No. ONDRINAI is an independent, community-led social initiative and does not claim registered charitable status, 80G tax exemptions, or audited financial certifications. All activity expenses are reported transparently in our public ledger.',
+      'No. ONDRINAI is an independent, community-led social initiative and does not claim registered charitable status, 80G tax exemptions, or audited financial certifications. All activity expenses and receipts are documented and shared openly with community members and contributors.',
   },
   {
     question: 'How are contributions used?',
     answer:
-      'Contributions are utilized directly toward the verified ground costs of our activities (such as food provisions, native seeds, and essential supplies). We maintain an open activity ledger on our Transparency page.',
+      'Contributions are utilized directly toward the verified ground costs of our activities (such as food provisions, native seeds, and essential supplies). We maintain open documentation and cost breakdowns for each initiative in our activity archive.',
   },
 ];
 

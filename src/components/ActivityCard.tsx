@@ -14,10 +14,10 @@ export function ActivityCard({ activity, index = 0 }: ActivityCardProps) {
   return (
     <Link
       to={`/activities/${activity.slug}`}
-      className="group flex flex-col bg-off-white border border-forest/15 card-hover overflow-hidden h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-forest"
+      className="group flex flex-col bg-white dark:bg-[#032014] border border-slate-200/90 dark:border-emerald-500/20 rounded-2xl shadow-xs hover:shadow-xl hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
     >
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-sage/20">
+      <div className="relative aspect-[4/3] overflow-hidden bg-slate-900">
         {primaryPhoto && (
           <img
             src={primaryPhoto.url}
@@ -26,33 +26,33 @@ export function ActivityCard({ activity, index = 0 }: ActivityCardProps) {
             className="w-full h-full object-cover transition-transform duration-700 ease-editorial group-hover:scale-105"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-deep-green/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="absolute top-4 left-4">
           <CategoryBadge category={activity.category} light />
         </div>
-        <div className="absolute top-4 right-4 bg-deep-green/90 text-cream text-xs font-mono font-semibold px-2.5 py-1 tracking-wider backdrop-blur-sm border border-cream/10">
+        <div className="absolute top-4 right-4 bg-black/80 text-emerald-300 text-xs font-mono font-semibold px-2.5 py-1 tracking-wider backdrop-blur-md border border-emerald-500/30 rounded-md">
           ACT {activity.number}
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-6 sm:p-7 flex flex-col flex-grow justify-between">
+      <div className="p-6 sm:p-7 flex flex-col flex-grow justify-between bg-white dark:bg-[#032014]">
         <div>
-          <h3 className="text-xl sm:text-2xl font-serif font-medium text-charcoal text-balance group-hover:text-forest transition-colors">
+          <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 dark:text-white text-balance group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
             {activity.title}
           </h3>
-          <p className="mt-3 text-sm text-charcoal/70 leading-relaxed line-clamp-3">
+          <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3">
             {activity.shortDescription}
           </p>
 
           {/* Impact stats */}
-          <div className="mt-5 pt-4 border-t border-forest/10 flex flex-wrap gap-x-6 gap-y-2">
+          <div className="mt-5 pt-4 border-t border-slate-100 dark:border-white/10 flex flex-wrap gap-x-6 gap-y-2">
             {activity.impacts.map((impact, i) => (
               <div key={i} className="flex flex-col">
-                <span className="text-lg font-serif font-semibold text-forest">
+                <span className="text-lg font-serif font-extrabold text-emerald-700 dark:text-emerald-400">
                   {impact.value}
                 </span>
-                <span className="text-xs text-charcoal/60 uppercase tracking-wide">
+                <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wide">
                   {impact.label}
                 </span>
               </div>
@@ -60,9 +60,9 @@ export function ActivityCard({ activity, index = 0 }: ActivityCardProps) {
           </div>
         </div>
 
-        <div className="mt-6 pt-4 border-t border-forest/10 flex items-center gap-2 text-sm font-semibold text-forest group-hover:gap-3 transition-all duration-300">
-          <span>Read full activity report</span>
-          <ArrowRight className="w-4 h-4 text-forest" />
+        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-white/10 flex items-center gap-2 text-sm font-semibold text-emerald-700 dark:text-emerald-400 group-hover:gap-3 transition-all duration-300">
+          <span>Read verified report</span>
+          <ArrowRight className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
         </div>
       </div>
     </Link>

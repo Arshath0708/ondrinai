@@ -1,39 +1,33 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
-import {
-  Camera,
-  X,
-  ChevronLeft,
-  ChevronRight,
-  ExternalLink,
-  MapPin,
-  Calendar,
-  Layers,
-  ArrowRight,
-  Heart,
-} from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 import { galleryItems } from '@/data/gallery';
 import { Reveal, PageHeader } from '@/components/ui/Primitives';
-import type { GalleryItem, ActivityCategory } from '@/types';
+import type { GalleryItem } from '@/types';
 
-type FilterCategory = 'ALL' | ActivityCategory;
+type GalleryCategory = 'ALL' | 'FEED' | 'PLANT' | 'BUILD';
 
-const CATEGORIES: { label: string; value: FilterCategory }[] = [
-  { label: 'All Photos', value: 'ALL' },
-  { label: 'FEED', value: 'FEED' },
-  { label: 'PLANT', value: 'PLANT' },
-  { label: 'BUILD', value: 'BUILD' },
-  { label: 'RESPOND', value: 'RESPOND' },
+const CATEGORIES: { label: string; value: GalleryCategory }[] = [
+  { label: 'All', value: 'ALL' },
+  { label: 'Feed', value: 'FEED' },
+  { label: 'Plant', value: 'PLANT' },
+  { label: 'Build', value: 'BUILD' },
 ];
 
 export function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState<FilterCategory>('ALL');
+  const [activeCategory, setActiveCategory] = useState<GalleryCategory>('ALL');
   const [activeItemIndex, setActiveItemIndex] = useState<number | null>(null);
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
 
-  // Filter items based on selected category
-  const filteredItems = galleryItems.filter((item) =>
-    activeCategory === 'ALL' ? true : item.category === activeCategory
-  );
+  const handleImageError = (id: string) => {
+    setFailedImages((prev) => new Set(prev).add(id));
+  };
+
+  // Filter items based on selected category (Feed, Plant, Build) and exclude missing/deleted images
+  const filteredItems = galleryItems
+    .filter((item) => !failedImages.has(item.id))
+    .filter((item) =>
+      activeCategory === 'ALL' ? true : item.category === activeCategory
+    );
 
   // Open lightbox
   const openLightbox = (index: number) => {
@@ -45,7 +39,7 @@ export function GalleryPage() {
     setActiveItemIndex(null);
   }, []);
 
-  // Previous item in lightbox
+  // Previous image in lightbox
   const prevLightbox = useCallback(() => {
     if (activeItemIndex === null) return;
     setActiveItemIndex((prev) =>
@@ -53,7 +47,7 @@ export function GalleryPage() {
     );
   }, [activeItemIndex, filteredItems.length]);
 
-  // Next item in lightbox
+  // Next image in lightbox
   const nextLightbox = useCallback(() => {
     if (activeItemIndex === null) return;
     setActiveItemIndex((prev) =>
@@ -92,17 +86,26 @@ export function GalleryPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Visual Archive"
-        title="Authentic Community Moments"
-        subtitle="Genuine photographic documentation from our on-ground activities in Madurai. Real volunteers, verified actions, and unfiltered community care."
+        eyebrow="Photo Archive &bull; Ground Documentation"
+        title="Our Work in Photos"
+        subtitle="A living visual record of verified on-ground care, nourishment, and environmental renewal."
       />
 
       {/* Category Filter Tabs */}
-      <section className="bg-cream/40 border-b border-forest/10 py-4 sticky top-20 sm:top-24 z-30 backdrop-blur-md">
+      <section className="glass-light dark:bg-[#02140C]/90 backdrop-blur-md border-b border-slate-200 dark:border-white/10 py-4 sticky top-20 sm:top-24 z-30 shadow-xs">
         <div className="container-max container-px">
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none" role="tablist" aria-label="Gallery category filters">
+          <div
+            className="flex items-center gap-2.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none"
+            role="tablist"
+            aria-label="Gallery category filters"
+          >
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.value;
+              const count =
+                cat.value === 'ALL'
+                  ? galleryItems.length
+                  : galleryItems.filter((i) => i.category === cat.value).length;
+
               return (
                 <button
                   key={cat.value}
@@ -113,18 +116,16 @@ export function GalleryPage() {
                     setActiveCategory(cat.value);
                     setActiveItemIndex(null);
                   }}
-                  className={`px-4 py-2 text-xs font-semibold rounded-full transition-all whitespace-nowrap cursor-pointer ${
+                  className={`px-5 py-2 text-xs sm:text-sm font-semibold rounded-full transition-all whitespace-nowrap cursor-pointer ${
                     isActive
-                      ? 'bg-forest text-cream shadow-sm'
-                      : 'bg-off-white text-charcoal/70 border border-forest/15 hover:border-forest/30 hover:text-forest'
+                      ? 'bg-slate-900 dark:bg-emerald-400 text-white dark:text-slate-950 shadow-md font-bold'
+                      : 'bg-white dark:bg-[#031C11] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400'
                   }`}
                 >
                   {cat.label}
-                  {cat.value !== 'ALL' && (
-                    <span className="ml-1.5 opacity-60 font-mono text-[10px]">
-                      ({galleryItems.filter((i) => i.category === cat.value).length})
-                    </span>
-                  )}
+                  <span className="ml-1.5 opacity-60 font-mono text-[11px]">
+                    ({count})
+                  </span>
                 </button>
               );
             })}
@@ -132,155 +133,89 @@ export function GalleryPage() {
         </div>
       </section>
 
-      {/* Gallery Grid Section */}
-      <section className="py-12 sm:py-16">
+      {/* Pure Photo Grid Section */}
+      <section className="py-12 sm:py-16 bg-white dark:bg-[#02110A]">
         <div className="container-max container-px">
           {filteredItems.length === 0 ? (
-            /* Graceful Empty State for Categories with No Published Images */
-            <div className="py-20 text-center max-w-md mx-auto">
-              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-forest/10 flex items-center justify-center text-forest">
+            /* Empty State */
+            <div className="py-24 text-center max-w-md mx-auto">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-700 dark:text-emerald-300">
                 <Camera className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-serif font-bold text-forest mb-2">
-                No Photos Published in {activeCategory} Yet
+              <h3 className="text-xl font-serif font-bold text-slate-900 dark:text-white mb-2">
+                No Photos in {activeCategory} Yet
               </h3>
-              <p className="text-xs sm:text-sm text-charcoal/70 leading-relaxed mb-6">
-                We only publish authentic photographs from confirmed, completed initiatives. New photographic records will be published after our upcoming drives.
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6 font-sans">
+                Photos for this category will be added soon as new community initiatives are completed.
               </p>
               <button
                 type="button"
                 onClick={() => setActiveCategory('ALL')}
-                className="btn-outline text-xs"
+                className="btn-secondary rounded-xl text-xs"
               >
-                View All Activity Photos
+                View All Photos
               </button>
             </div>
           ) : (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
               {filteredItems.map((item, index) => (
-                <Reveal key={item.id} delay={index * 80}>
-                  <div className="group bg-off-white border border-forest/15 rounded-sm overflow-hidden shadow-2xs hover:shadow-md hover:border-forest/30 transition-all flex flex-col justify-between h-full">
-                    
-                    {/* Clickable Image Container */}
-                    <div
-                      className="relative h-64 overflow-hidden cursor-pointer bg-forest/5"
-                      onClick={() => openLightbox(index)}
-                      role="button"
-                      tabIndex={0}
-                      aria-label={`View full image: ${item.title}`}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                          e.preventDefault();
-                          openLightbox(index);
-                        }
-                      }}
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.alt}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      
-                      {/* Category Badge overlay */}
-                      <div className="absolute top-3 left-3">
-                        <span className="px-2.5 py-0.5 text-[10px] font-mono font-bold tracking-wider text-cream bg-deep-green/90 rounded-full uppercase shadow-xs">
-                          {item.category}
-                        </span>
-                      </div>
+                <Reveal key={item.id} delay={index * 40}>
+                  <div
+                    onClick={() => openLightbox(index)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`View photo ${index + 1}`}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                      }
+                    }}
+                    className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-slate-900 border border-slate-200/90 dark:border-white/10 shadow-xs hover:shadow-xl hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      loading="lazy"
+                      onError={() => handleImageError(item.id)}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
 
-                      {/* Expand overlay icon */}
-                      <div className="absolute inset-0 bg-forest/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="px-3 py-1.5 bg-off-white/95 text-forest text-xs font-semibold rounded-sm shadow-md flex items-center gap-1.5">
-                          <Camera className="w-3.5 h-3.5" /> Click to Expand
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Metadata & Description */}
-                    <div className="p-5 flex flex-col justify-between flex-1">
-                      <div>
-                        <div className="flex items-center gap-3 text-[11px] text-charcoal/60 mb-2">
-                          {item.date && (
-                            <span className="inline-flex items-center gap-1">
-                              <Calendar className="w-3 h-3 text-forest" />
-                              {item.date}
-                            </span>
-                          )}
-                          {item.location && (
-                            <span className="inline-flex items-center gap-1 line-clamp-1">
-                              <MapPin className="w-3 h-3 text-forest" />
-                              {item.location}
-                            </span>
-                          )}
-                        </div>
-
-                        <h3 className="font-serif font-bold text-forest text-base mb-2 group-hover:text-deep-green transition-colors">
-                          {item.title}
-                        </h3>
-
-                        {item.description && (
-                          <p className="text-xs text-charcoal/70 leading-relaxed mb-4">
-                            {item.description}
-                          </p>
-                        )}
-                      </div>
-
-                      {/* Bottom Link to Detailed Activity */}
-                      {item.activitySlug && (
-                        <div className="pt-3 border-t border-forest/10">
-                          <Link
-                            to={`/activities/${item.activitySlug}`}
-                            className="text-xs font-semibold text-forest hover:text-deep-green inline-flex items-center gap-1.5 group/link"
-                          >
-                            <span>Read Verified Activity Report</span>
-                            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
-                          </Link>
-                        </div>
-                      )}
+                    {/* Subtle hover overlay */}
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="p-3 rounded-full bg-white text-slate-900 shadow-lg scale-90 group-hover:scale-100 transition-transform">
+                        <Camera className="w-4 h-4 text-emerald-700" />
+                      </span>
                     </div>
                   </div>
                 </Reveal>
               ))}
             </div>
           )}
-
-          {/* Photographic Ethics & Dignity Note */}
-          <div className="mt-14 p-5 bg-cream/40 border border-forest/15 rounded-sm max-w-3xl mx-auto text-xs text-charcoal/70 leading-relaxed">
-            <strong className="text-forest font-semibold block mb-1">
-              Ethical Photography Notice:
-            </strong>
-            ONDRINAI documents community activities to maintain public transparency and inspire collective responsibility. We respect the dignity and privacy of all participants, elderly residents, and community members. Sensitive locations, personal identifying numbers, and private data are never published.
-          </div>
         </div>
       </section>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal (Pure Photo View) */}
       {currentItem && (
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={currentItem.title}
-          className="fixed inset-0 z-50 bg-charcoal/95 backdrop-blur-sm flex flex-col justify-between animate-fade-in p-4 sm:p-6"
+          aria-label="Image preview"
+          className="fixed inset-0 z-50 bg-charcoal/95 backdrop-blur-md flex flex-col justify-between animate-fade-in p-4 sm:p-6"
           onClick={closeLightbox}
         >
-          {/* Top Bar */}
+          {/* Top Bar with Counter and Close */}
           <div
-            className="flex items-center justify-between text-cream max-w-6xl w-full mx-auto pb-4"
+            className="flex items-center justify-between text-white max-w-6xl w-full mx-auto pb-2"
             onClick={(e) => e.stopPropagation()}
           >
-            <div>
-              <span className="text-[10px] font-mono uppercase text-sage tracking-widest font-bold">
-                {currentItem.category} &bull; {currentItem.date}
-              </span>
-              <h3 className="text-base sm:text-lg font-serif font-semibold text-cream">
-                {currentItem.title}
-              </h3>
-            </div>
+            <span className="text-xs font-mono tracking-widest text-emerald-400 font-semibold uppercase">
+              {(activeItemIndex ?? 0) + 1} / {filteredItems.length} &bull; Ground Archive
+            </span>
             <button
               type="button"
               onClick={closeLightbox}
-              className="p-2 rounded-full bg-cream/10 hover:bg-cream/20 text-cream transition-colors"
+              className="p-2 rounded-full bg-white/10 hover:bg-emerald-500/30 text-white transition-colors cursor-pointer border border-emerald-500/30"
               aria-label="Close image preview"
             >
               <X className="w-6 h-6" />
@@ -297,18 +232,18 @@ export function GalleryPage() {
               <button
                 type="button"
                 onClick={prevLightbox}
-                className="absolute left-2 sm:left-4 z-10 p-2 sm:p-3 rounded-full bg-charcoal/70 hover:bg-charcoal text-cream transition-all border border-cream/20"
+                className="absolute left-2 sm:left-4 z-10 p-2.5 sm:p-3 rounded-full bg-black/70 hover:bg-black text-white transition-all border border-emerald-500/30 cursor-pointer shadow-lg"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
             )}
 
-            {/* Displayed Image */}
+            {/* Displayed Full Image */}
             <img
               src={currentItem.image}
               alt={currentItem.alt}
-              className="max-h-[70vh] sm:max-h-[75vh] w-auto max-w-full object-contain rounded-sm shadow-2xl border border-cream/15"
+              className="max-h-[82vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl border border-emerald-500/30"
             />
 
             {/* Next Button */}
@@ -316,7 +251,7 @@ export function GalleryPage() {
               <button
                 type="button"
                 onClick={nextLightbox}
-                className="absolute right-2 sm:right-4 z-10 p-2 sm:p-3 rounded-full bg-charcoal/70 hover:bg-charcoal text-cream transition-all border border-cream/20"
+                className="absolute right-2 sm:right-4 z-10 p-2.5 sm:p-3 rounded-full bg-black/70 hover:bg-black text-white transition-all border border-emerald-500/30 cursor-pointer shadow-lg"
                 aria-label="Next image"
               >
                 <ChevronRight className="w-6 h-6" />
@@ -324,25 +259,8 @@ export function GalleryPage() {
             )}
           </div>
 
-          {/* Bottom Caption & Activity Link */}
-          <div
-            className="max-w-4xl w-full mx-auto text-center pt-3 text-xs text-cream/75 flex flex-col sm:flex-row items-center justify-between gap-3"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <p className="max-w-xl text-left">
-              {currentItem.description}
-            </p>
-            {currentItem.activitySlug && (
-              <Link
-                to={`/activities/${currentItem.activitySlug}`}
-                onClick={closeLightbox}
-                className="btn-light text-xs shrink-0 py-2 px-3"
-              >
-                <span>View Full Activity Report</span>
-                <ExternalLink className="w-3.5 h-3.5 ml-1" />
-              </Link>
-            )}
-          </div>
+          {/* Bottom spacer for balance */}
+          <div className="h-6" />
         </div>
       )}
     </>

@@ -53,17 +53,6 @@ export const contributionCauses: ContributionCause[] = [
       'Communicates responsible community feeding in designated local areas. Does not imply continuous care for a specific named animal unless documented.',
   },
   {
-    id: 'clothing-person',
-    title: 'Clothing for one person',
-    category: 'BUILD',
-    amount: 250,
-    unitLabel: 'per person',
-    description:
-      'Helps procure essential, dignified clothing items (such as comfortable everyday wear or seasonal garments) for distribution.',
-    disclaimer:
-      'Proposed contribution amount. Garments are sourced locally according to confirmed community needs and weather requirements.',
-  },
-  {
     id: 'plant-tree',
     title: 'Plant one tree',
     category: 'PLANT',
