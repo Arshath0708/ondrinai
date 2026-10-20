@@ -356,10 +356,7 @@ export function AIAvatarGuide() {
     setCurrentEmote('think'); // Arshi immediately puts hand to chin and thinks!
 
     try {
-      const [reply] = await Promise.all([
-        askArshathAI(text, messages),
-        new Promise((resolve) => setTimeout(resolve, 600)),
-      ]);
+      const reply = await askArshathAI(text, messages);
 
       const botMsg: ChatMessage = {
         id: `assistant-${Date.now()}`,

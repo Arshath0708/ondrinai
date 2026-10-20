@@ -96,40 +96,52 @@ export async function askArshathAI(
       },
     ];
 
-    // Try candidate models in order (e.g. gemini-3.5-flash, gemini-3.8-flash, etc.)
-    for (const model of CANDIDATE_MODELS) {
-      try {
-        const response = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey.trim())}`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              contents,
-              generationConfig: {
-                temperature: 0.7,
-                maxOutputTokens: 400,
-              },
-            }),
-          }
-        );
+    // Parallel race candidate models with strict 2.2s timeout for instant speed
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 2200);
 
-        if (response.ok) {
-          const data = await response.json();
-          const replyText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (replyText && replyText.trim().length > 0) {
-            const action = determineAction(userQuery, replyText);
-            const reaction = determineReaction(userQuery, replyText);
-            return { text: replyText.trim(), action, reaction };
-          }
+    const callModel = async (model: string): Promise<string> => {
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey.trim())}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          signal: controller.signal,
+          body: JSON.stringify({
+            contents,
+            generationConfig: {
+              temperature: 0.7,
+              maxOutputTokens: 250,
+            },
+          }),
         }
-      } catch {
-        // Continue to next model in candidate list
+      );
+
+      if (!response.ok) {
+        throw new Error(`Model ${model} returned status ${response.status}`);
       }
+
+      const data = await response.json();
+      const replyText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!replyText || replyText.trim().length === 0) {
+        throw new Error(`Empty reply from ${model}`);
+      }
+      return replyText.trim();
+    };
+
+    try {
+      const replyText = await Promise.any(CANDIDATE_MODELS.map(callModel));
+      clearTimeout(timeoutId);
+      const action = determineAction(userQuery, replyText);
+      const reaction = determineReaction(userQuery, replyText);
+      return { text: replyText, action, reaction };
+    } catch {
+      clearTimeout(timeoutId);
+      // Fall through to instant local response engine immediately
     }
   }
 
-  // Intelligent local semantic knowledge engine (fallback if network is down)
+  // Intelligent local semantic knowledge engine (instant, zero delay fallback)
   const local = getLocalArshathResponse(userQuery);
   const reaction = determineReaction(userQuery, local.text);
   return { ...local, reaction };
@@ -217,6 +229,30 @@ function determineAction(query: string, reply: string): ChatMessage['action'] | 
 
 export function getLocalArshathResponse(query: string): { text: string; action?: ChatMessage['action'] } {
   const q = query.toLowerCase().trim();
+
+  // Instant Math Arithmetic Evaluator (answers math questions in 0ms)
+  const mathMatch = q.match(/(\d+(?:\.\d+)?)\s*([\+\-\*\/xX]|times|plus|minus|divided by)\s*(\d+(?:\.\d+)?)/);
+  if (mathMatch) {
+    const a = parseFloat(mathMatch[1]);
+    const op = mathMatch[2].toLowerCase();
+    const b = parseFloat(mathMatch[3]);
+    let result = 0;
+    if (op === '+' || op === 'plus') result = a + b;
+    else if (op === '-' || op === 'minus') result = a - b;
+    else if (op === '*' || op === 'x' || op === 'times') result = a * b;
+    else if (op === '/' || op === 'divided by') result = b !== 0 ? a / b : NaN;
+
+    if (!isNaN(result)) {
+      return {
+        text: `The answer is ${result}! 😊\n\nDid you know? Every small number adds up — just ₹30 feeds a waiting elder on Madurai streets today. How else can I guide you?`,
+        action: {
+          label: '⚡ Sponsor a Meal (₹30)',
+          url: '/donate?cause_breakfast-person=1',
+          type: 'donate',
+        },
+      };
+    }
+  }
 
   // Greetings
   if (q.match(/^(hi|hello|hey|vanakkam|namaste|good morning|good evening)/)) {
