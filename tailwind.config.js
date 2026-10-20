@@ -29,6 +29,10 @@ export default {
       letterSpacing: {
         'editorial': '0.28em',
       },
+      boxShadow: {
+        '2xs': '0 1px 2px 0 rgba(0, 0, 0, 0.04)',
+        'xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+      },
       animation: {
         'fade-up': 'fadeUp 0.6s ease-out forwards',
         'fade-in': 'fadeIn 0.5s ease-out forwards',
