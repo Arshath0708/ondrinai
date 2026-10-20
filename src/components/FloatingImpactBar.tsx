@@ -31,20 +31,20 @@ export function FloatingImpactBar() {
       aria-label="Quick sponsorship dock"
       className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-40 animate-fade-in"
     >
-      <div className="glass-hud text-white p-3.5 sm:p-4 rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.45)] border border-emerald-500/40 flex items-center justify-between gap-3 ring-1 ring-emerald-400/20 backdrop-blur-xl">
+      <div className="glass-hud text-white p-3.5 sm:p-4 rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.45)] border border-amber-500/40 flex items-center justify-between gap-3 ring-1 ring-amber-400/20 backdrop-blur-xl">
         <div className="flex items-center gap-3 min-w-0">
           <div className="relative shrink-0">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-emerald-500 flex items-center justify-center shadow-[0_0_15px_rgba(245,158,11,0.5)]">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-600 flex items-center justify-center shadow-[0_0_15px_rgba(245,158,11,0.5)]">
               <Heart className="w-5 h-5 text-white fill-white/30" />
             </div>
             <span className="absolute -top-1 -right-1 flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500" />
             </span>
           </div>
 
           <div className="min-w-0">
-            <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-300 uppercase tracking-wider">
+            <div className="flex items-center gap-1.5 text-[10px] font-mono text-amber-300 uppercase tracking-wider">
               <Sparkles className="w-3 h-3 text-amber-400 shrink-0" />
               <span>Direct Ground Impact</span>
             </div>

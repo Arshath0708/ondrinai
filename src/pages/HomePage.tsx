@@ -42,10 +42,10 @@ export function HomePage() {
             {/* Left: Authoritative Institutional Copy */}
             <div className="lg:col-span-6 order-1">
               <Reveal>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-semibold tracking-wider mb-4">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-500/30 text-amber-800 dark:text-amber-300 text-xs font-mono font-semibold tracking-wider mb-4">
                   <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
                   </span>
                   <span>MADURAI CITIZEN AID &bull; ZERO SALARIES &bull; 100% DIRECT</span>
                 </div>
@@ -55,7 +55,7 @@ export function HomePage() {
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-slate-900 dark:text-white leading-[1.12] tracking-tight text-balance">
                   Direct Citizen Aid.
                   <br />
-                  <span className="text-emerald-700 dark:text-emerald-400">
+                  <span className="text-amber-600 dark:text-amber-400">
                     Real On-Ground Impact.
                   </span>
                 </h1>
@@ -71,11 +71,11 @@ export function HomePage() {
               <Reveal delay={200}>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 my-6 sm:my-8 p-3 sm:p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm">
                   <div className="p-2 sm:p-2.5 text-center">
-                    <div className="text-2xl sm:text-3xl font-serif font-extrabold text-emerald-700 dark:text-emerald-400">25+</div>
+                    <div className="text-2xl sm:text-3xl font-serif font-extrabold text-amber-600 dark:text-amber-400">25+</div>
                     <div className="text-[11px] sm:text-xs font-sans text-slate-600 dark:text-slate-400 mt-0.5 leading-tight">Fresh Meals Shared</div>
                   </div>
                   <div className="p-2 sm:p-2.5 text-center border-l border-slate-200 dark:border-slate-800">
-                    <div className="text-2xl sm:text-3xl font-serif font-extrabold text-emerald-700 dark:text-emerald-400">2,000+</div>
+                    <div className="text-2xl sm:text-3xl font-serif font-extrabold text-orange-600 dark:text-orange-400">2,000+</div>
                     <div className="text-[11px] sm:text-xs font-sans text-slate-600 dark:text-slate-400 mt-0.5 leading-tight">Panai Seeds Sown</div>
                   </div>
                   <div className="p-2 sm:p-2.5 text-center border-l border-slate-200 dark:border-slate-800">
@@ -117,7 +117,7 @@ export function HomePage() {
                   <p className="font-serif text-base sm:text-lg text-slate-800 dark:text-slate-200 italic font-semibold">
                     &ldquo;{siteConfig.tagline}&rdquo;
                   </p>
-                  <p className="font-tamil text-xs sm:text-sm text-slate-500 dark:text-emerald-400/90 mt-1 font-medium">
+                  <p className="font-tamil text-xs sm:text-sm text-slate-500 dark:text-amber-400/90 mt-1 font-medium">
                     {siteConfig.tamilTagline}
                   </p>
                 </div>
@@ -129,7 +129,7 @@ export function HomePage() {
               <Reveal delay={200}>
                 <div className="relative max-w-xl mx-auto lg:max-w-none">
                   {/* Subtle Background Glow */}
-                  <div className="absolute -inset-4 bg-gradient-to-tr from-emerald-500/10 via-emerald-600/10 to-amber-500/10 rounded-3xl blur-2xl opacity-60 pointer-events-none" />
+                  <div className="absolute -inset-4 bg-gradient-to-tr from-amber-500/10 via-orange-600/10 to-amber-500/10 rounded-3xl blur-2xl opacity-60 pointer-events-none" />
 
                   {/* Main Container */}
                   <div className="relative bg-white dark:bg-slate-900 rounded-3xl p-4 sm:p-6 border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden">
@@ -142,7 +142,7 @@ export function HomePage() {
                           onClick={() => setActivePillar('FEED')}
                           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                             activePillar === 'FEED'
-                              ? 'bg-emerald-600 text-white shadow-sm font-bold'
+                              ? 'bg-amber-600 text-white shadow-sm font-bold'
                               : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                           }`}
                         >
@@ -154,7 +154,7 @@ export function HomePage() {
                           onClick={() => setActivePillar('PLANT')}
                           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                             activePillar === 'PLANT'
-                              ? 'bg-emerald-600 text-white shadow-sm font-bold'
+                              ? 'bg-amber-600 text-white shadow-sm font-bold'
                               : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                           }`}
                         >
@@ -163,8 +163,8 @@ export function HomePage() {
                         </button>
                       </div>
 
-                      <div className="flex items-center gap-1.5 px-3 py-1 bg-emerald-50 dark:bg-emerald-950/60 rounded-full border border-emerald-200 dark:border-emerald-800/80 text-[11px] font-mono font-semibold text-emerald-800 dark:text-emerald-300">
-                        <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                      <div className="flex items-center gap-1.5 px-3 py-1 bg-amber-50 dark:bg-amber-950/60 rounded-full border border-amber-200 dark:border-amber-800/80 text-[11px] font-mono font-semibold text-amber-800 dark:text-amber-300">
+                        <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
                         <span>ON-GROUND</span>
                       </div>
                     </div>
@@ -183,7 +183,7 @@ export function HomePage() {
                       {/* Location Tag */}
                       <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10">
                         <div className="flex items-center gap-1.5 px-2.5 py-1 bg-black/70 backdrop-blur-md border border-white/20 text-[11px] font-semibold text-white rounded-lg shadow-sm">
-                          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                          <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
                           <span>{activePillar === 'FEED' ? '📍 Madurai Streets • Fresh Meal Drive' : '📍 Madurai Bypass • Native Panai Sowing'}</span>
                         </div>
                       </div>
@@ -191,7 +191,7 @@ export function HomePage() {
                       {/* Bottom Info Ribbon */}
                       <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 z-10 bg-slate-950/80 backdrop-blur-xl border border-white/15 p-3 sm:p-4 rounded-xl flex items-center justify-between gap-3 text-white">
                         <div>
-                          <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider font-bold">
+                          <div className="text-[10px] font-mono text-amber-400 uppercase tracking-wider font-bold">
                             {activePillar === 'FEED' ? 'Dignity Action' : 'Ecological Sowing'}
                           </div>
                           <p className="text-sm sm:text-base font-serif font-bold mt-0.5">
@@ -200,7 +200,7 @@ export function HomePage() {
                         </div>
                         <Link
                           to="/gallery"
-                          className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-emerald-500 hover:text-white text-emerald-300 border border-white/20 rounded-lg text-xs font-semibold transition-all"
+                          className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-amber-500 hover:text-white text-amber-300 border border-white/20 rounded-lg text-xs font-semibold transition-all"
                         >
                           <span>Gallery</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -217,7 +217,7 @@ export function HomePage() {
                               key={member.id}
                               src={member.image}
                               alt={member.name}
-                              className="inline-block h-8 w-8 rounded-full ring-2 ring-emerald-500/80 object-cover object-top"
+                              className="inline-block h-8 w-8 rounded-full ring-2 ring-amber-500/80 object-cover object-top"
                               onError={(e) => {
                                 (e.target as HTMLElement).style.display = 'none';
                               }}
@@ -236,7 +236,7 @@ export function HomePage() {
 
                       <a
                         href="#direct-impact"
-                        className="text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:underline inline-flex items-center gap-1"
+                        className="text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline inline-flex items-center gap-1"
                       >
                         <span>Sponsor directly</span>
                         <ArrowRight className="w-3 h-3" />
@@ -314,8 +314,8 @@ export function HomePage() {
                     </div>
                     <div className="lg:col-span-5">
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-600 to-emerald-700 text-white shadow-xs">
-                          {Icon && <Icon className="w-5 h-5 text-emerald-200" />}
+                        <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-700 text-white shadow-xs">
+                          {Icon && <Icon className="w-5 h-5 text-amber-100" />}
                         </span>
                         <span className="text-2xl font-serif font-extrabold text-slate-900 dark:text-white tracking-tight">
                           {pillar.name}
@@ -327,7 +327,7 @@ export function HomePage() {
                       <p className="mt-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
                         {pillar.description}
                       </p>
-                      <Link to={pillar.link} className="link-underline mt-6 inline-flex items-center gap-1.5 font-bold text-emerald-700 dark:text-emerald-400">
+                      <Link to={pillar.link} className="link-underline mt-6 inline-flex items-center gap-1.5 font-bold text-amber-600 dark:text-amber-400">
                         <span>View {pillar.name.toLowerCase()} activities</span>
                         <ArrowRight className="w-4 h-4" />
                       </Link>
@@ -533,7 +533,7 @@ export function HomePage() {
                   <div className="border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-7 sm:p-8 rounded-2xl shadow-xs hover:shadow-xl transition-all h-full flex flex-col justify-between">
                     <div>
                       <div className="flex items-center gap-4 mb-4">
-                        <span className="inline-flex items-center justify-center w-12 h-12 shrink-0 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300">
+                        <span className="inline-flex items-center justify-center w-12 h-12 shrink-0 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-amber-700 dark:text-amber-300">
                           {Icon && <Icon className="w-5 h-5" />}
                         </span>
                         <h3 className="text-base font-sans font-bold tracking-wide text-slate-900 dark:text-white uppercase">
@@ -572,13 +572,13 @@ export function HomePage() {
         <div className="container-max container-px text-center relative z-10">
           <Reveal>
             <BotanicalDivider className="mb-8 opacity-70" />
-            <p className="font-serif text-2xl sm:text-3xl lg:text-4xl font-medium italic text-balance max-w-3xl mx-auto leading-relaxed text-emerald-100">
+            <p className="font-serif text-2xl sm:text-3xl lg:text-4xl font-medium italic text-balance max-w-3xl mx-auto leading-relaxed text-amber-100">
               &ldquo;{siteConfig.philosophy}&rdquo;
             </p>
             <p className="mt-6 text-sm sm:text-base text-slate-300 tracking-wide font-medium">
               {siteConfig.brandName} &mdash; {siteConfig.tagline}
             </p>
-            <p className="mt-2 font-tamil text-emerald-400/80 text-sm">
+            <p className="mt-2 font-tamil text-amber-400/80 text-sm">
               {siteConfig.tamilTagline}
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

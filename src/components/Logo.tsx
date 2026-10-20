@@ -23,7 +23,7 @@ export function Logo({
 }: LogoProps) {
   const isLight = variant === 'light';
   const textColor = isLight ? 'text-white' : 'text-slate-900 dark:text-white';
-  const subTextColor = isLight ? 'text-slate-300' : 'text-slate-500 dark:text-emerald-400';
+  const subTextColor = isLight ? 'text-slate-300' : 'text-slate-500 dark:text-amber-400';
 
   const sizeClasses = {
     sm: { img: 'w-8 h-8 sm:w-9 sm:h-9', text: 'text-sm sm:text-base', sub: 'text-[9px]' },

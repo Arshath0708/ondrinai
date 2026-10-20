@@ -118,8 +118,8 @@ export function GalleryPage() {
                   }}
                   className={`px-5 py-2 text-xs sm:text-sm font-semibold rounded-full transition-all whitespace-nowrap cursor-pointer ${
                     isActive
-                      ? 'bg-slate-900 dark:bg-emerald-400 text-white dark:text-slate-950 shadow-md font-bold'
-                      : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400'
+                      ? 'bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 shadow-md font-bold'
+                      : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-400'
                   }`}
                 >
                   {cat.label}
@@ -139,7 +139,7 @@ export function GalleryPage() {
           {filteredItems.length === 0 ? (
             /* Empty State */
             <div className="py-24 text-center max-w-md mx-auto">
-              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-700 dark:text-emerald-300">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 flex items-center justify-center text-amber-700 dark:text-amber-300">
                 <Camera className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-serif font-bold text-slate-900 dark:text-white mb-2">
@@ -171,7 +171,7 @@ export function GalleryPage() {
                         openLightbox(index);
                       }
                     }}
-                    className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-slate-900 border border-slate-200/90 dark:border-white/10 shadow-xs hover:shadow-xl hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                    className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-slate-900 border border-slate-200/90 dark:border-white/10 shadow-xs hover:shadow-xl hover:border-amber-500/40 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                   >
                     <img
                       src={item.image}
@@ -184,7 +184,7 @@ export function GalleryPage() {
                     {/* Subtle hover overlay */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span className="p-3 rounded-full bg-white text-slate-900 shadow-lg scale-90 group-hover:scale-100 transition-transform">
-                        <Camera className="w-4 h-4 text-emerald-700" />
+                        <Camera className="w-4 h-4 text-amber-600" />
                       </span>
                     </div>
                   </div>
@@ -209,13 +209,13 @@ export function GalleryPage() {
             className="flex items-center justify-between text-white max-w-6xl w-full mx-auto pb-2"
             onClick={(e) => e.stopPropagation()}
           >
-            <span className="text-xs font-mono tracking-widest text-emerald-400 font-semibold uppercase">
+            <span className="text-xs font-mono tracking-widest text-amber-400 font-semibold uppercase">
               {(activeItemIndex ?? 0) + 1} / {filteredItems.length} &bull; Ground Archive
             </span>
             <button
               type="button"
               onClick={closeLightbox}
-              className="p-2 rounded-full bg-white/10 hover:bg-emerald-500/30 text-white transition-colors cursor-pointer border border-emerald-500/30"
+              className="p-2 rounded-full bg-white/10 hover:bg-amber-500/30 text-white transition-colors cursor-pointer border border-amber-500/30"
               aria-label="Close image preview"
             >
               <X className="w-6 h-6" />
@@ -232,7 +232,7 @@ export function GalleryPage() {
               <button
                 type="button"
                 onClick={prevLightbox}
-                className="absolute left-2 sm:left-4 z-10 p-2.5 sm:p-3 rounded-full bg-black/70 hover:bg-black text-white transition-all border border-emerald-500/30 cursor-pointer shadow-lg"
+                className="absolute left-2 sm:left-4 z-10 p-2.5 sm:p-3 rounded-full bg-black/70 hover:bg-black text-white transition-all border border-amber-500/30 cursor-pointer shadow-lg"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -243,7 +243,7 @@ export function GalleryPage() {
             <img
               src={currentItem.image}
               alt={currentItem.alt}
-              className="max-h-[82vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl border border-emerald-500/30"
+              className="max-h-[82vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl border border-amber-500/30"
             />
 
             {/* Next Button */}
@@ -251,7 +251,7 @@ export function GalleryPage() {
               <button
                 type="button"
                 onClick={nextLightbox}
-                className="absolute right-2 sm:right-4 z-10 p-2.5 sm:p-3 rounded-full bg-black/70 hover:bg-black text-white transition-all border border-emerald-500/30 cursor-pointer shadow-lg"
+                className="absolute right-2 sm:right-4 z-10 p-2.5 sm:p-3 rounded-full bg-black/70 hover:bg-black text-white transition-all border border-amber-500/30 cursor-pointer shadow-lg"
                 aria-label="Next image"
               >
                 <ChevronRight className="w-6 h-6" />

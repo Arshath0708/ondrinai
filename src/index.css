@@ -21,11 +21,11 @@
   }
 
   ::selection {
-    @apply bg-emerald-600 text-white;
+    @apply bg-amber-600 text-white;
   }
 
   *:focus-visible {
-    @apply outline-2 outline-offset-2 outline-emerald-500;
+    @apply outline-2 outline-offset-2 outline-amber-500;
   }
 }
 
@@ -47,15 +47,15 @@
   }
 
   .btn-primary {
-    @apply btn bg-emerald-700 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white shadow-md hover:shadow-[0_0_20px_rgba(16,185,129,0.35)] hover:-translate-y-0.5 active:translate-y-0 font-bold;
+    @apply btn bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white shadow-md hover:shadow-[0_0_24px_rgba(245,158,11,0.45)] hover:-translate-y-0.5 active:translate-y-0 font-bold;
   }
 
   .btn-secondary {
-    @apply btn bg-white dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 hover:border-emerald-600 dark:hover:border-emerald-500 hover:bg-emerald-50/60 dark:hover:bg-slate-700 shadow-sm hover:shadow-md;
+    @apply btn bg-white dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-400 hover:bg-amber-50/60 dark:hover:bg-slate-700 shadow-sm hover:shadow-md;
   }
 
   .btn-light {
-    @apply btn bg-white text-slate-900 hover:bg-emerald-50 hover:text-emerald-800 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 shadow-md;
+    @apply btn bg-white text-slate-900 hover:bg-amber-50 hover:text-amber-800 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 shadow-md;
   }
 
   .btn-outline-light {
@@ -63,7 +63,7 @@
   }
 
   .btn-donate {
-    @apply btn bg-gradient-to-r from-amber-500 via-amber-600 to-emerald-600 text-white font-bold hover:shadow-[0_0_30px_rgba(245,158,11,0.55)] hover:-translate-y-0.5 active:translate-y-0 border-0 relative overflow-hidden;
+    @apply btn bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white font-bold hover:shadow-[0_0_30px_rgba(245,158,11,0.55)] hover:-translate-y-0.5 active:translate-y-0 border-0 relative overflow-hidden;
   }
 
   .btn-donate::before {
@@ -102,12 +102,12 @@
 
   .cyber-grid,
   .editorial-mesh {
-    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 185, 129, 0.05), transparent 70%);
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 158, 11, 0.05), transparent 70%);
   }
 
   .cyber-grid-dark,
   .editorial-mesh-dark {
-    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 185, 129, 0.08), transparent 70%);
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 158, 11, 0.08), transparent 70%);
   }
 
   .pb-safe {

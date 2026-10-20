@@ -86,7 +86,7 @@ export function ContactPage() {
       <section className="bg-slate-50 dark:bg-[#0B0F19] pt-32 pb-16 sm:pt-36 sm:pb-20 border-b border-slate-200/80 dark:border-white/10 relative cyber-grid">
         <div className="container-max container-px relative z-10">
           <Reveal>
-            <p className="eyebrow text-emerald-700 dark:text-emerald-400 mb-5 font-mono font-bold">Get in Touch &bull; Direct Connection</p>
+            <p className="eyebrow text-amber-700 dark:text-amber-400 mb-5 font-mono font-bold">Get in Touch &bull; Direct Connection</p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-slate-900 dark:text-white text-balance max-w-3xl tracking-tight">
               We&rsquo;d love to hear from you.
             </h1>
@@ -113,8 +113,8 @@ export function ContactPage() {
                 <div className="space-y-5">
                   {/* Founder & Direct Contact */}
                   <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200/90 dark:border-white/10 rounded-2xl p-6 shadow-xs">
-                    <div className="flex items-center gap-2 text-xs uppercase tracking-wider font-mono font-bold text-emerald-800 dark:text-emerald-300 mb-2">
-                      <User className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                    <div className="flex items-center gap-2 text-xs uppercase tracking-wider font-mono font-bold text-amber-800 dark:text-amber-300 mb-2">
+                      <User className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                       Direct Contact &bull; {siteConfig.founderName}
                     </div>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-4 font-sans">
@@ -128,9 +128,9 @@ export function ContactPage() {
                         </span>
                         <a
                           href={`mailto:${siteConfig.founderEmail}`}
-                          className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-slate-900 dark:text-white hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors break-all mt-0.5"
+                          className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-slate-900 dark:text-white hover:text-amber-700 dark:hover:text-amber-400 transition-colors break-all mt-0.5"
                         >
-                          <Mail className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                          <Mail className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                           {siteConfig.founderEmail}
                         </a>
                       </div>
@@ -141,9 +141,9 @@ export function ContactPage() {
                         </span>
                         <a
                           href={`tel:${siteConfig.founderPhoneTel}`}
-                          className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-slate-900 dark:text-white hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors mt-0.5"
+                          className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-slate-900 dark:text-white hover:text-amber-700 dark:hover:text-amber-400 transition-colors mt-0.5"
                         >
-                          <Phone className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                          <Phone className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                           {siteConfig.founderPhone}
                         </a>
                       </div>
@@ -157,16 +157,16 @@ export function ContactPage() {
                     </p>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors break-all mt-1"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white hover:text-amber-700 dark:hover:text-amber-400 transition-colors break-all mt-1"
                     >
-                      <Mail className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                      <Mail className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                       {siteConfig.email}
                     </a>
                   </div>
 
                   {/* WhatsApp Community */}
                   <div className="bg-gradient-to-br from-slate-900 to-slate-950 text-white p-6 rounded-2xl border border-slate-800 shadow-lg">
-                    <p className="text-xs uppercase tracking-wider font-mono font-bold text-emerald-400 mb-2">
+                    <p className="text-xs uppercase tracking-wider font-mono font-bold text-amber-400 mb-2">
                       Volunteer WhatsApp Community
                     </p>
                     <p className="text-sm text-slate-300 mb-4 leading-relaxed font-sans">
@@ -196,36 +196,36 @@ export function ContactPage() {
                         href={siteConfig.linkedinUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 p-2.5 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 hover:border-emerald-500 hover:text-emerald-700 rounded-xl transition-all text-xs font-semibold text-slate-700 dark:text-slate-300 shadow-2xs"
+                        className="flex items-center gap-2 p-2.5 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 hover:border-amber-500 hover:text-amber-700 rounded-xl transition-all text-xs font-semibold text-slate-700 dark:text-slate-300 shadow-2xs"
                       >
-                        <Linkedin className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                        <Linkedin className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                         <span className="truncate">LinkedIn</span>
                       </a>
                       <a
                         href={siteConfig.youtubeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 p-2.5 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 hover:border-emerald-500 hover:text-emerald-700 rounded-xl transition-all text-xs font-semibold text-slate-700 dark:text-slate-300 shadow-2xs"
+                        className="flex items-center gap-2 p-2.5 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 hover:border-amber-500 hover:text-amber-700 rounded-xl transition-all text-xs font-semibold text-slate-700 dark:text-slate-300 shadow-2xs"
                       >
-                        <Youtube className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                        <Youtube className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                         <span className="truncate">YouTube</span>
                       </a>
                       <a
                         href={siteConfig.facebookUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 p-2.5 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 hover:border-emerald-500 hover:text-emerald-700 rounded-xl transition-all text-xs font-semibold text-slate-700 dark:text-slate-300 shadow-2xs"
+                        className="flex items-center gap-2 p-2.5 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 hover:border-amber-500 hover:text-amber-700 rounded-xl transition-all text-xs font-semibold text-slate-700 dark:text-slate-300 shadow-2xs"
                       >
-                        <Facebook className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                        <Facebook className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                         <span className="truncate">Facebook</span>
                       </a>
                       <a
                         href={siteConfig.instagramUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 p-2.5 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 hover:border-emerald-500 hover:text-emerald-700 rounded-xl transition-all text-xs font-semibold text-slate-700 dark:text-slate-300 shadow-2xs"
+                        className="flex items-center gap-2 p-2.5 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 hover:border-amber-500 hover:text-amber-700 rounded-xl transition-all text-xs font-semibold text-slate-700 dark:text-slate-300 shadow-2xs"
                       >
-                        <Instagram className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                        <Instagram className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                         <span className="truncate">Instagram</span>
                       </a>
                     </div>
@@ -268,7 +268,7 @@ export function ContactPage() {
                         id="name"
                         value={form.name}
                         onChange={(e) => handleChange('name', e.target.value)}
-                        className={`w-full bg-white dark:bg-slate-950 rounded-xl border ${errors.name ? 'border-red-500 ring-1 ring-red-400' : 'border-slate-200 dark:border-white/10 focus:border-emerald-600 dark:focus:border-emerald-400'} px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors shadow-2xs`}
+                        className={`w-full bg-white dark:bg-slate-950 rounded-xl border ${errors.name ? 'border-red-500 ring-1 ring-red-400' : 'border-slate-200 dark:border-white/10 focus:border-amber-600 dark:focus:border-amber-400'} px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors shadow-2xs`}
                         placeholder="e.g. Anandha Kumar"
                         aria-invalid={!!errors.name}
                       />
@@ -289,7 +289,7 @@ export function ContactPage() {
                         id="email"
                         value={form.email}
                         onChange={(e) => handleChange('email', e.target.value)}
-                        className={`w-full bg-white dark:bg-slate-950 rounded-xl border ${errors.email ? 'border-red-500 ring-1 ring-red-400' : 'border-slate-200 dark:border-white/10 focus:border-emerald-600 dark:focus:border-emerald-400'} px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors shadow-2xs`}
+                        className={`w-full bg-white dark:bg-slate-950 rounded-xl border ${errors.email ? 'border-red-500 ring-1 ring-red-400' : 'border-slate-200 dark:border-white/10 focus:border-amber-600 dark:focus:border-amber-400'} px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors shadow-2xs`}
                         placeholder="you@example.com"
                         aria-invalid={!!errors.email}
                       />
@@ -309,7 +309,7 @@ export function ContactPage() {
                         id="reason"
                         value={form.reason}
                         onChange={(e) => handleChange('reason', e.target.value)}
-                        className={`w-full bg-white dark:bg-slate-950 rounded-xl border ${errors.reason ? 'border-red-500 ring-1 ring-red-400' : 'border-slate-200 dark:border-white/10 focus:border-emerald-600 dark:focus:border-emerald-400'} px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors shadow-2xs`}
+                        className={`w-full bg-white dark:bg-slate-950 rounded-xl border ${errors.reason ? 'border-red-500 ring-1 ring-red-400' : 'border-slate-200 dark:border-white/10 focus:border-amber-600 dark:focus:border-amber-400'} px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors shadow-2xs`}
                         aria-invalid={!!errors.reason}
                       >
                         <option value="">Select a reason</option>
@@ -337,7 +337,7 @@ export function ContactPage() {
                         value={form.message}
                         onChange={(e) => handleChange('message', e.target.value)}
                         rows={4}
-                        className={`w-full bg-white dark:bg-slate-950 rounded-xl border ${errors.message ? 'border-red-500 ring-1 ring-red-400' : 'border-slate-200 dark:border-white/10 focus:border-emerald-600 dark:focus:border-emerald-400'} px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors shadow-2xs resize-y`}
+                        className={`w-full bg-white dark:bg-slate-950 rounded-xl border ${errors.message ? 'border-red-500 ring-1 ring-red-400' : 'border-slate-200 dark:border-white/10 focus:border-amber-600 dark:focus:border-amber-400'} px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors shadow-2xs resize-y`}
                         placeholder="Tell us what you have in mind..."
                         aria-invalid={!!errors.message}
                       />
@@ -355,7 +355,7 @@ export function ContactPage() {
                           type="checkbox"
                           checked={form.consent}
                           onChange={(e) => handleChange('consent', e.target.checked)}
-                          className="mt-1 w-4 h-4 accent-emerald-600 rounded"
+                          className="mt-1 w-4 h-4 accent-amber-600 rounded"
                           aria-invalid={!!errors.consent}
                         />
                         <span className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -381,8 +381,8 @@ export function ContactPage() {
                     </div>
 
                     {submitted && (
-                      <div className="mt-4 p-4 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-xl flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <div className="mt-4 p-4 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 rounded-xl flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
                         <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                           Opening your email client... If it doesn&rsquo;t launch automatically, feel free to email directly at <strong>{siteConfig.founderEmail}</strong> or call <strong>{siteConfig.founderPhone}</strong>.
                         </p>

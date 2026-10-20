@@ -14,8 +14,8 @@ export function NotFoundPage() {
       />
       <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 min-h-[75vh] flex items-center justify-center pt-32 pb-20 cyber-grid">
         <div className="container-max container-px text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-mono uppercase tracking-widest mb-4">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 text-xs font-mono uppercase tracking-widest mb-4">
+            <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
             <span>404 Protocol Error &bull; Route Not Located</span>
           </span>
           <p className="font-serif text-7xl sm:text-9xl font-extrabold text-slate-200 tracking-tight">404</p>

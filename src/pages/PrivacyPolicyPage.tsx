@@ -14,8 +14,8 @@ export function PrivacyPolicyPage() {
       <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-[#0B0F19] dark:via-slate-950 dark:to-[#0B0F19] pt-32 pb-16 sm:pt-36 sm:pb-20 border-b border-slate-200/80 dark:border-white/10 cyber-grid">
         <div className="container-max container-px relative z-10">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-mono uppercase tracking-widest mb-5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 text-xs font-mono uppercase tracking-widest mb-5">
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
               <span>Transparent Governance</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-serif font-bold text-slate-900 dark:text-white text-balance">
@@ -102,7 +102,7 @@ export function PrivacyPolicyPage() {
                 <h2 className="text-xl font-serif font-bold text-slate-900 dark:text-white mb-3">Your Rights &amp; Contact</h2>
                 <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                   You can request to update, view, or delete any direct correspondence records we have by sending an email to{' '}
-                  <a href={`mailto:${siteConfig.email}`} className="text-emerald-700 dark:text-emerald-400 underline hover:text-emerald-900 dark:hover:text-emerald-300 font-semibold">
+                  <a href={`mailto:${siteConfig.email}`} className="text-amber-700 dark:text-amber-400 underline hover:text-amber-900 dark:hover:text-amber-300 font-semibold">
                     {siteConfig.email}
                   </a>.
                 </p>
@@ -110,9 +110,9 @@ export function PrivacyPolicyPage() {
             </Reveal>
 
             <Reveal>
-              <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-800 rounded-2xl p-6 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed shadow-xs">
+              <div className="bg-amber-50 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-800 rounded-2xl p-6 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed shadow-xs">
                 <p>
-                  <strong className="text-emerald-800 dark:text-emerald-300">Notice:</strong> {siteConfig.brandName} is a grassroots student-led community initiative. This document is provided in good faith to explain our honest practices and does not represent a certified corporate or registered legal entity.
+                  <strong className="text-amber-800 dark:text-amber-300">Notice:</strong> {siteConfig.brandName} is a grassroots student-led community initiative. This document is provided in good faith to explain our honest practices and does not represent a certified corporate or registered legal entity.
                 </p>
               </div>
             </Reveal>

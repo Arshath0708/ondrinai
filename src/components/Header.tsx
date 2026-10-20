@@ -37,12 +37,12 @@ export function Header() {
   return (
     <>
       {/* High-Impact Announcement & Live Signal Strip */}
-      <div className="bg-[#0B0F19] border-b border-emerald-500/20 text-slate-200 py-2 px-4 text-xs tracking-wider flex items-center justify-center gap-2.5 overflow-hidden">
+      <div className="bg-[#0B0F19] border-b border-amber-500/20 text-slate-200 py-2 px-4 text-xs tracking-wider flex items-center justify-center gap-2.5 overflow-hidden">
         <span className="relative flex h-2 w-2 shrink-0">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
         </span>
-        <span className="font-tamil font-medium text-emerald-300 text-xs sm:text-sm tracking-wide text-center">
+        <span className="font-tamil font-medium text-amber-300 text-xs sm:text-sm tracking-wide text-center">
           ஒன்றிணைந்து, சிறந்த எதிர்காலத்தை உருவாக்குவோம்
         </span>
       </div>
@@ -75,8 +75,8 @@ export function Header() {
                   to={item.path}
                   className={`px-3 py-1.5 rounded-xl text-xs xl:text-sm font-semibold tracking-wide transition-all duration-200 flex items-center ${
                     isActive(item.path)
-                      ? 'text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/90 dark:border-emerald-500/30 shadow-2xs font-bold'
-                      : 'text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-400 hover:bg-slate-100/80 dark:hover:bg-white/5'
+                      ? 'text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/60 border border-amber-200/90 dark:border-amber-500/30 shadow-2xs font-bold'
+                      : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/80 dark:hover:bg-white/5'
                   }`}
                 >
                   {item.label}
@@ -100,7 +100,7 @@ export function Header() {
                 href={WHATSAPP_COMMUNITY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-9 sm:h-10 px-3.5 xl:px-4 rounded-xl border border-slate-300 dark:border-emerald-500/30 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-emerald-500/10 text-xs font-semibold transition-colors hidden xl:inline-flex items-center justify-center gap-1.5 shrink-0"
+                className="h-9 sm:h-10 px-3.5 xl:px-4 rounded-xl border border-slate-300 dark:border-amber-500/30 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-amber-500/10 text-xs font-semibold transition-colors hidden xl:inline-flex items-center justify-center gap-1.5 shrink-0"
                 title="Join our volunteer WhatsApp community"
               >
                 <span>Join Community</span>
@@ -114,7 +114,7 @@ export function Header() {
 
               <button
                 type="button"
-                className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-800 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 transition-colors"
+                className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-800 dark:text-slate-200 hover:text-amber-600 dark:hover:text-amber-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 transition-colors"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label={isOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isOpen}
@@ -142,7 +142,7 @@ export function Header() {
               <ThemeToggle />
               <button
                 type="button"
-                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 focus:outline-none transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:text-amber-600 dark:hover:text-amber-400 focus:outline-none transition-colors"
                 onClick={() => setIsOpen(false)}
                 aria-label="Close menu"
               >
@@ -153,9 +153,9 @@ export function Header() {
 
           {/* Quick Micro-Sponsorship Card on Mobile */}
           <div className="px-5 pt-4">
-            <div className="p-4 rounded-2xl bg-slate-900 border border-emerald-500/30 text-white shadow-xl">
+            <div className="p-4 rounded-2xl bg-slate-900 border border-amber-500/30 text-white shadow-xl">
               <div className="flex items-center justify-between mb-1.5">
-                <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">Fast Micro-Sponsorship</span>
+                <span className="text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">Fast Micro-Sponsorship</span>
                 <span className="text-xs font-serif font-extrabold text-amber-400">₹30 = 1 Soul Fed</span>
               </div>
               <p className="text-xs text-slate-300 mb-3 leading-snug">
@@ -178,7 +178,7 @@ export function Header() {
                 to={item.path}
                 onClick={() => setIsOpen(false)}
                 className={`text-lg sm:text-xl font-serif font-medium py-3 border-b border-slate-100 dark:border-slate-800/80 transition-colors ${
-                  isActive(item.path) ? 'text-emerald-600 dark:text-emerald-400 font-bold' : 'text-slate-800 dark:text-slate-200'
+                  isActive(item.path) ? 'text-amber-600 dark:text-amber-400 font-bold' : 'text-slate-800 dark:text-slate-200'
                 }`}
                 style={{ animationDelay: `${idx * 30}ms` }}
               >
@@ -194,7 +194,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="ONDRINAI on Instagram"
-                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-amber-400 hover:bg-amber-600 hover:text-white transition-colors"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -203,7 +203,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="ONDRINAI on LinkedIn"
-                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-amber-400 hover:bg-amber-600 hover:text-white transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -212,7 +212,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="ONDRINAI on YouTube"
-                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-amber-400 hover:bg-amber-600 hover:text-white transition-colors"
               >
                 <Youtube className="w-4 h-4" />
               </a>
@@ -221,7 +221,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="ONDRINAI on Facebook"
-                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-amber-400 hover:bg-amber-600 hover:text-white transition-colors"
               >
                 <Facebook className="w-4 h-4" />
               </a>

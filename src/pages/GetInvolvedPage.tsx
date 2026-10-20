@@ -52,8 +52,8 @@ export function GetInvolvedPage() {
       <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-[#0B0F19] dark:via-slate-950 dark:to-[#0B0F19] pt-32 pb-16 sm:pt-36 sm:pb-20 border-b border-slate-200/80 dark:border-white/10 cyber-grid">
         <div className="container-max container-px relative z-10">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-mono uppercase tracking-widest mb-5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 text-xs font-mono uppercase tracking-widest mb-5">
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
               <span>Decentralized Civic Impact</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-900 dark:text-white text-balance max-w-3xl">
@@ -72,8 +72,8 @@ export function GetInvolvedPage() {
           <Reveal>
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 bg-slate-900/90 p-8 sm:p-10 rounded-2xl border border-slate-800 backdrop-blur-md shadow-2xl">
               <div className="max-w-2xl">
-                <span className="text-xs uppercase tracking-wider text-emerald-400 font-mono font-semibold flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                <span className="text-xs uppercase tracking-wider text-amber-400 font-mono font-semibold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
                   Official Volunteer Channel
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold mt-2 text-white">
@@ -118,15 +118,15 @@ export function GetInvolvedPage() {
               const isReversed = i % 2 === 1;
               return (
                 <Reveal key={path.letter} delay={i * 80}>
-                  <div className={`grid lg:grid-cols-12 gap-8 items-center bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 rounded-2xl p-7 sm:p-9 shadow-xs hover:border-emerald-500/30 transition-all ${isReversed ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+                  <div className={`grid lg:grid-cols-12 gap-8 items-center bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 rounded-2xl p-7 sm:p-9 shadow-xs hover:border-amber-500/30 transition-all ${isReversed ? 'lg:[&>*:first-child]:order-2' : ''}`}>
                     <div className="lg:col-span-8">
                       <div className="flex items-start gap-5">
-                        <span className="inline-flex items-center justify-center w-12 h-12 shrink-0 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 rounded-xl shadow-xs">
+                        <span className="inline-flex items-center justify-center w-12 h-12 shrink-0 bg-amber-50 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-800 text-amber-700 dark:text-amber-300 rounded-xl shadow-xs">
                           <Icon className="w-6 h-6" />
                         </span>
                         <div>
                           <div className="flex items-center gap-3 mb-1">
-                            <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 tracking-wider">
+                            <span className="text-xs font-mono font-bold text-amber-700 dark:text-amber-400 tracking-wider">
                               PATH {path.letter}
                             </span>
                             <span className="text-xs text-slate-400 dark:text-slate-500 uppercase tracking-wider font-semibold font-mono">
@@ -146,7 +146,7 @@ export function GetInvolvedPage() {
                       <div className="bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-white/10 rounded-xl p-6 text-center shadow-xs">
                         {path.letter === 'B' ? (
                           <>
-                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 mb-1">
+                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300 mb-1">
                               Transparent Micro-Causes
                             </p>
                             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -162,7 +162,7 @@ export function GetInvolvedPage() {
                               </Link>
                               <Link
                                 to="/donate"
-                                className="text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-400 hover:text-emerald-900 dark:hover:text-emerald-300 transition-colors uppercase tracking-wider py-1"
+                                className="text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 hover:text-amber-900 dark:hover:text-amber-300 transition-colors uppercase tracking-wider py-1"
                               >
                                 View All 5 Causes
                               </Link>
@@ -170,7 +170,7 @@ export function GetInvolvedPage() {
                           </>
                         ) : path.letter === 'A' ? (
                           <>
-                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 mb-1">
+                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300 mb-1">
                               Zero financial barrier
                             </p>
                             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -188,7 +188,7 @@ export function GetInvolvedPage() {
                           </>
                         ) : path.letter === 'C' ? (
                           <>
-                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 mb-1">
+                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300 mb-1">
                               Direct Resources
                             </p>
                             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -204,7 +204,7 @@ export function GetInvolvedPage() {
                           </>
                         ) : (
                           <>
-                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 mb-1">
+                            <p className="text-xs font-mono font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300 mb-1">
                               Shared Talents
                             </p>
                             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -236,8 +236,8 @@ export function GetInvolvedPage() {
             <div className="lg:col-span-4">
               <Reveal>
                 <div className="flex items-center gap-2 mb-3">
-                  <HelpCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                  <p className="eyebrow text-emerald-600 dark:text-emerald-400 font-mono tracking-widest text-xs uppercase">Clarifications</p>
+                  <HelpCircle className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                  <p className="eyebrow text-amber-600 dark:text-amber-400 font-mono tracking-widest text-xs uppercase">Clarifications</p>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-white">
                   Frequently Asked Questions
@@ -251,7 +251,7 @@ export function GetInvolvedPage() {
               <div className="space-y-4">
                 {faqItems.map((faq, i) => (
                   <Reveal key={i} delay={i * 60}>
-                    <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 rounded-2xl p-6 shadow-xs hover:border-emerald-500/40 transition-colors">
+                    <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 rounded-2xl p-6 shadow-xs hover:border-amber-500/40 transition-colors">
                       <h3 className="text-base sm:text-lg font-serif font-bold text-slate-900 dark:text-white mb-2">
                         {faq.question}
                       </h3>

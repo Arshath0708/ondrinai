@@ -24,7 +24,7 @@ export function AboutPage() {
       <section className="bg-slate-50 dark:bg-[#0B0F19] pt-32 pb-16 sm:pt-36 sm:pb-20 border-b border-slate-200/80 dark:border-slate-800 relative editorial-mesh">
         <div className="container-max container-px relative z-10">
           <Reveal>
-            <p className="eyebrow text-emerald-700 dark:text-emerald-400 mb-5 font-mono font-bold">About ONDRINAI &bull; Grassroots Action</p>
+            <p className="eyebrow text-amber-700 dark:text-amber-400 mb-5 font-mono font-bold">About ONDRINAI &bull; Grassroots Action</p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-slate-900 dark:text-white text-balance max-w-4xl tracking-tight">
               Built on the belief that small actions matter.
             </h1>
@@ -41,7 +41,7 @@ export function AboutPage() {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-7">
               <Reveal>
-                <p className="eyebrow text-emerald-700 dark:text-emerald-400 mb-4 font-mono font-bold">Who We Are</p>
+                <p className="eyebrow text-amber-700 dark:text-amber-400 mb-4 font-mono font-bold">Who We Are</p>
                 <p className="text-lg sm:text-xl text-slate-900 dark:text-white leading-relaxed text-pretty font-serif font-bold">
                   ONDRINAI is a growing, student-led community initiative founded in {siteConfig.foundedLocation}. The name symbolizes unity, coming together, and shared responsibility.
                 </p>
@@ -55,9 +55,9 @@ export function AboutPage() {
             </div>
             <div className="lg:col-span-5">
               <Reveal delay={120}>
-                <div className="bg-slate-900 text-white p-8 sm:p-10 rounded-2xl border border-emerald-500/30 shadow-xl">
-                  <p className="eyebrow text-emerald-400 mb-4 font-mono">Our Philosophy</p>
-                  <p className="font-serif text-xl sm:text-2xl italic leading-relaxed text-balance font-medium text-emerald-100">
+                <div className="bg-slate-900 text-white p-8 sm:p-10 rounded-2xl border border-amber-500/30 shadow-xl">
+                  <p className="eyebrow text-amber-400 mb-4 font-mono">Our Philosophy</p>
+                  <p className="font-serif text-xl sm:text-2xl italic leading-relaxed text-balance font-medium text-amber-100">
                     &ldquo;{siteConfig.philosophy}&rdquo;
                   </p>
                   <BotanicalDivider className="my-6 opacity-40" />
@@ -65,7 +65,7 @@ export function AboutPage() {
                     {siteConfig.tamilTagline}
                   </p>
                   <div className="mt-6 pt-6 border-t border-white/15">
-                    <p className="text-xs text-emerald-400 uppercase tracking-wider font-mono font-semibold">Location</p>
+                    <p className="text-xs text-amber-400 uppercase tracking-wider font-mono font-semibold">Location</p>
                     <p className="text-sm text-white mt-1 font-sans">{siteConfig.location}</p>
                   </div>
                 </div>
@@ -80,8 +80,8 @@ export function AboutPage() {
         <div className="container-max container-px">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             <Reveal>
-              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl h-full shadow-xs hover:shadow-lg transition-all border-t-4 border-t-emerald-600">
-                <p className="eyebrow text-emerald-700 dark:text-emerald-400 mb-4 font-mono font-bold">Our Mission</p>
+              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl h-full shadow-xs hover:shadow-lg transition-all border-t-4 border-t-amber-500">
+                <p className="eyebrow text-amber-700 dark:text-amber-400 mb-4 font-mono font-bold">Our Mission</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white mb-4">
                   Community-Driven Action
                 </h2>
@@ -91,8 +91,8 @@ export function AboutPage() {
               </div>
             </Reveal>
             <Reveal delay={100}>
-              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl h-full shadow-xs hover:shadow-lg transition-all border-t-4 border-t-emerald-600">
-                <p className="eyebrow text-emerald-700 dark:text-emerald-400 mb-4 font-mono font-bold">Our Vision</p>
+              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl h-full shadow-xs hover:shadow-lg transition-all border-t-4 border-t-amber-500">
+                <p className="eyebrow text-amber-700 dark:text-amber-400 mb-4 font-mono font-bold">Our Vision</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white mb-4">
                   Shared Responsibility
                 </h2>
@@ -126,7 +126,7 @@ export function AboutPage() {
 
                 {/* Founder Text */}
                 <div className="md:col-span-7">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-semibold uppercase tracking-wider mb-3 rounded-full">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300 text-xs font-mono font-semibold uppercase tracking-wider mb-3 rounded-full">
                     A Note from Our Founder
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white">
@@ -141,9 +141,9 @@ export function AboutPage() {
                       &ldquo;ONDRINAI started with a simple thought: we don&rsquo;t need to wait for big organizations or large funds to start caring for the people and places around us. Small, honest steps taken together can create lasting change.&rdquo;
                     </p>
                     <p>
-                      &ldquo;Our initiative is built around direct ground focus areas &mdash; <strong className="text-emerald-700 dark:text-emerald-400">FEED</strong>, <strong className="text-emerald-700 dark:text-emerald-400">PLANT</strong>, and <strong className="text-emerald-700 dark:text-emerald-400">BUILD</strong>, alongside our defining future generation motive to <strong className="text-sky-600 dark:text-sky-400">SAVE WATER</strong>. Whether we are sharing a meal with elderly residents, planting Panai seeds with youth groups, or preparing volunteer drives for water conservation, the goal is always collective responsibility.&rdquo;
+                      &ldquo;Our initiative is built around direct ground focus areas &mdash; <strong className="text-amber-700 dark:text-amber-400">FEED</strong>, <strong className="text-amber-700 dark:text-amber-400">PLANT</strong>, and <strong className="text-amber-700 dark:text-amber-400">BUILD</strong>, alongside our defining future generation motive to <strong className="text-sky-600 dark:text-sky-400">SAVE WATER</strong>. Whether we are sharing a meal with elderly residents, planting Panai seeds with youth groups, or preparing volunteer drives for water conservation, the goal is always collective responsibility.&rdquo;
                     </p>
-                    <p className="font-serif italic text-emerald-800 dark:text-emerald-300 font-medium pt-1">
+                    <p className="font-serif italic text-amber-800 dark:text-amber-300 font-medium pt-1">
                       &ldquo;ONDRINAI is not about one person or one leader. It belongs to every volunteer, contributor, and community member who believes in doing good where they are.&rdquo;
                     </p>
                   </div>
@@ -156,7 +156,7 @@ export function AboutPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="ONDRINAI on LinkedIn"
-                        className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                        className="text-amber-700 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 transition-colors"
                       >
                         <Linkedin className="w-4 h-4" />
                       </a>
@@ -165,7 +165,7 @@ export function AboutPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="ONDRINAI on YouTube"
-                        className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                        className="text-amber-700 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 transition-colors"
                       >
                         <Youtube className="w-4 h-4" />
                       </a>
@@ -174,7 +174,7 @@ export function AboutPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="ONDRINAI on Facebook"
-                        className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                        className="text-amber-700 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 transition-colors"
                       >
                         <Facebook className="w-4 h-4" />
                       </a>
@@ -183,14 +183,14 @@ export function AboutPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="ONDRINAI on Instagram"
-                        className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                        className="text-amber-700 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 transition-colors"
                       >
                         <Instagram className="w-4 h-4" />
                       </a>
                     </div>
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 hover:text-emerald-800"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400 hover:text-amber-800"
                     >
                       <span>Get in touch</span>
                       &rarr;
@@ -208,8 +208,8 @@ export function AboutPage() {
         <div className="container-max container-px mb-12">
           <Reveal>
             <div className="max-w-2xl mx-auto text-center">
-              <span className="eyebrow text-emerald-700 dark:text-emerald-400 inline-flex items-center gap-1.5 mb-2 font-mono font-bold">
-                <Users className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              <span className="eyebrow text-amber-700 dark:text-amber-400 inline-flex items-center gap-1.5 mb-2 font-mono font-bold">
+                <Users className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                 The People Behind ONDRINAI
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-slate-900 dark:text-white text-balance tracking-tight">
@@ -230,7 +230,7 @@ export function AboutPage() {
             {[...teamMembers, ...teamMembers].map((member, i) => (
               <div
                 key={`${member.id}-${i}`}
-                className="w-56 sm:w-64 shrink-0 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-3 sm:p-4 shadow-xs hover:shadow-lg hover:border-emerald-500/40 transition-all duration-300"
+                className="w-56 sm:w-64 shrink-0 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-3 sm:p-4 shadow-xs hover:shadow-lg hover:border-amber-500/40 transition-all duration-300"
               >
                 <div className="aspect-[4/5] overflow-hidden rounded-xl bg-slate-900">
                   <img
@@ -265,7 +265,7 @@ export function AboutPage() {
               <Reveal key={value.name} delay={i * 60}>
                 <div className="bg-slate-50/70 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-7 sm:p-8 rounded-2xl h-full flex flex-col justify-between shadow-xs hover:shadow-lg transition-all">
                   <div>
-                    <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-800 tracking-wider">
+                    <span className="text-xs font-mono font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-800 tracking-wider">
                       0{i + 1}
                     </span>
                     <h3 className="text-lg font-serif font-bold text-slate-900 dark:text-white mt-3 mb-2">
@@ -301,7 +301,7 @@ export function AboutPage() {
                 <Reveal key={pillar.id} delay={i * 100}>
                   <div className="bg-white dark:bg-slate-900 p-8 text-center border border-slate-200/90 dark:border-slate-800 rounded-2xl h-full flex flex-col justify-between shadow-xs hover:shadow-lg transition-all">
                     <div>
-                      <span className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-700 text-white mb-5 shadow-xs">
+                      <span className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-700 text-white mb-5 shadow-xs">
                         {Icon && <Icon className="w-6 h-6" />}
                       </span>
                       <h3 className="text-lg font-sans font-bold tracking-wide text-slate-900 dark:text-white uppercase mb-3">
@@ -311,7 +311,7 @@ export function AboutPage() {
                         {pillar.description}
                       </p>
                     </div>
-                    <Link to={pillar.link} className="link-underline mt-4 text-xs font-bold uppercase tracking-wider justify-center text-emerald-700 dark:text-emerald-400">
+                    <Link to={pillar.link} className="link-underline mt-4 text-xs font-bold uppercase tracking-wider justify-center text-amber-700 dark:text-amber-400">
                       View {pillar.name.toLowerCase()} work
                     </Link>
                   </div>
