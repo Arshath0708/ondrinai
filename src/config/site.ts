@@ -10,7 +10,11 @@ export const ASSETS = {
   activity2: '/assets/Activity 2.jpeg',
   activity3: '/assets/Activity 3.png',
   founder: "/assets/Founder's image.jpeg",
-  avatar: '/assets/avatar-guide.jpg',
+  avatar: '/assets/avatar/avatar-idle.jpg',
+  avatarIdle: '/assets/avatar/avatar-idle.jpg',
+  avatarThink: '/assets/avatar/avatar-think.jpg',
+  avatarWave: '/assets/avatar/avatar-wave.jpg',
+  avatarCheer: '/assets/avatar/avatar-cheer.jpg',
   dog: '/assets/dog.jpg',
 } as const;
 
