@@ -50,7 +50,7 @@ export function ActivitiesPage() {
       />
 
       {/* Hero */}
-      <section className="bg-slate-50 dark:bg-[#03150D] pt-32 pb-12 sm:pt-36 sm:pb-16 border-b border-slate-200/80 dark:border-white/10 relative cyber-grid">
+      <section className="bg-slate-50 dark:bg-[#0B0F19] pt-32 pb-12 sm:pt-36 sm:pb-16 border-b border-slate-200/80 dark:border-slate-800 relative editorial-mesh">
         <div className="container-max container-px relative z-10">
           <Reveal>
             <p className="eyebrow text-emerald-700 dark:text-emerald-400 mb-5 font-mono font-bold">Activity Archive &bull; Documented On-Ground Action</p>
@@ -65,7 +65,7 @@ export function ActivitiesPage() {
       </section>
 
       {/* Activities with filters */}
-      <section className="bg-white dark:bg-[#02110A] py-16 sm:py-20">
+      <section className="bg-white dark:bg-[#0B0F19] py-16 sm:py-20">
         <div className="container-max container-px">
           {/* Category Filters */}
           <Reveal>
@@ -81,8 +81,8 @@ export function ActivitiesPage() {
                     onClick={() => handleFilter(option)}
                     className={`px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-200 rounded-xl border ${
                       activeFilter === option
-                        ? 'bg-slate-900 dark:bg-emerald-400 text-white dark:text-slate-950 border-slate-900 dark:border-emerald-400 shadow-md font-bold'
-                        : 'bg-slate-50 dark:bg-[#031C11] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#042818] hover:text-emerald-700 dark:hover:text-emerald-300 border-slate-200 dark:border-white/10'
+                        ? 'bg-slate-900 dark:bg-emerald-500 text-white dark:text-slate-950 border-slate-900 dark:border-emerald-500 shadow-md font-bold'
+                        : 'bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-700 dark:hover:text-emerald-400 border-slate-200 dark:border-slate-800'
                     }`}
                     aria-pressed={activeFilter === option}
                   >
@@ -110,7 +110,7 @@ export function ActivitiesPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-20 bg-slate-50 dark:bg-[#031C11] border border-slate-200 dark:border-white/10 rounded-2xl p-8">
+            <div className="text-center py-20 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8">
               <p className="text-slate-500 dark:text-slate-400 font-serif text-lg">
                 No activities documented in the {activeFilter} category yet.
               </p>

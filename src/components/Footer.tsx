@@ -15,7 +15,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-[#031B11] via-[#02140C] to-[#010D08] text-white border-t border-emerald-500/20 relative overflow-hidden">
+    <footer className="bg-[#0B0F19] text-white border-t border-slate-800 relative overflow-hidden">
       {/* Soft ambient atmospheric glow without any harsh dots */}
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -149,7 +149,7 @@ export function Footer() {
       </div>
 
       {/* Bottom telemetry bar */}
-      <div className="border-t border-emerald-500/15 bg-black/40">
+      <div className="border-t border-slate-800 bg-slate-950/80">
         <div className="container-max container-px py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 font-mono">
             <p className="flex items-center gap-2">

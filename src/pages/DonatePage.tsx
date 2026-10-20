@@ -131,9 +131,9 @@ export function DonatePage() {
       />
 
       {/* Trust & Legal Status Notice */}
-      <section className="bg-slate-50 dark:bg-[#03150D] border-b border-slate-200/80 dark:border-white/10 py-6">
+      <section className="bg-slate-50 dark:bg-[#0B0F19] border-b border-slate-200/80 dark:border-white/10 py-6">
         <div className="container-max container-px">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3.5 p-4 bg-white dark:bg-[#031C11] border border-slate-200/80 dark:border-white/10 rounded-2xl text-xs text-slate-700 dark:text-slate-300 shadow-xs">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3.5 p-4 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 rounded-2xl text-xs text-slate-700 dark:text-slate-300 shadow-xs">
             <div className="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 shrink-0 border border-emerald-200/80 dark:border-emerald-800">
               <Info className="w-4 h-4" />
             </div>
@@ -146,7 +146,7 @@ export function DonatePage() {
       </section>
 
       {/* Main Contribution Selection Section */}
-      <section className="py-12 sm:py-16 bg-white dark:bg-[#02110A]">
+      <section className="py-12 sm:py-16 bg-white dark:bg-[#0B0F19]">
         <div className="container-max container-px">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             
@@ -167,35 +167,35 @@ export function DonatePage() {
                   <button
                     type="button"
                     onClick={() => setQuantities({ 'breakfast-person': 1 })}
-                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-[#031C11] border border-slate-200 dark:border-white/10 text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-xs"
+                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-xs"
                   >
                     🍲 1 Meal (₹30)
                   </button>
                   <button
                     type="button"
                     onClick={() => setQuantities({ 'lunch-person': 1 })}
-                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-[#031C11] border border-slate-200 dark:border-white/10 text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-xs"
+                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-xs"
                   >
                     🍱 1 Lunch (₹60)
                   </button>
                   <button
                     type="button"
                     onClick={() => setQuantities({ 'stray-animal-food': 2 })}
-                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-[#031C11] border border-slate-200 dark:border-white/10 text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-xs"
+                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-xs"
                   >
                     🐕 2 Stray Dogs (₹40)
                   </button>
                   <button
                     type="button"
                     onClick={() => setQuantities({ 'plant-tree': 1 })}
-                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-[#031C11] border border-slate-200 dark:border-white/10 text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-xs"
+                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-xs"
                   >
                     🌱 1 Tree (₹70)
                   </button>
                   <button
                     type="button"
                     onClick={() => setQuantities({ 'breakfast-person': 1, 'lunch-person': 1, 'dinner-person': 1 })}
-                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-[#031C11] border border-slate-200 dark:border-white/10 text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-xs"
+                    className="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-xs"
                   >
                     🍲 Full Day Meals (₹120)
                   </button>
@@ -223,7 +223,7 @@ export function DonatePage() {
                           ? isWater
                             ? 'bg-sky-50/40 dark:bg-sky-950/30 border-sky-500 dark:border-sky-400 shadow-md ring-2 ring-sky-500/20'
                             : 'bg-emerald-50/40 dark:bg-emerald-950/30 border-emerald-600 dark:border-emerald-500 shadow-md ring-2 ring-emerald-500/20'
-                          : 'bg-white dark:bg-[#031C11] border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 shadow-xs'
+                          : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 shadow-xs'
                       }`}
                     >
                       <div>
@@ -255,7 +255,7 @@ export function DonatePage() {
                         </p>
 
                         {/* Context Note / Disclaimer */}
-                        <p className="text-[11px] text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-[#02140C] p-2.5 rounded-xl border-l-2 border-emerald-500 leading-normal mb-4">
+                        <p className="text-[11px] text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-950 p-2.5 rounded-xl border-l-2 border-emerald-500 leading-normal mb-4">
                           {cause.disclaimer}
                         </p>
                       </div>
@@ -265,7 +265,7 @@ export function DonatePage() {
                         <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
                           Quantity:
                         </span>
-                        <div className="flex items-center border border-slate-200 dark:border-white/15 rounded-xl bg-white dark:bg-[#02140C] overflow-hidden shadow-xs">
+                        <div className="flex items-center border border-slate-200 dark:border-white/15 rounded-xl bg-white dark:bg-slate-950 overflow-hidden shadow-xs">
                           <button
                             type="button"
                             onClick={() => handleQuantityChange(cause.id, -1)}
@@ -326,7 +326,7 @@ export function DonatePage() {
             <div className="lg:col-span-5 xl:col-span-4 sticky top-28 space-y-6">
               
               {/* Contribution Summary Card */}
-              <div className="bg-white dark:bg-[#031C11] border border-slate-200/90 dark:border-white/10 p-6 sm:p-7 rounded-2xl shadow-xl">
+              <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-white/10 p-6 sm:p-7 rounded-2xl shadow-xl">
                 <div className="flex items-center justify-between border-b border-slate-100 dark:border-white/10 pb-4 mb-4">
                   <div>
                     <span className="eyebrow text-emerald-600 dark:text-emerald-400 font-mono tracking-widest text-xs uppercase">Step 2</span>
@@ -403,7 +403,7 @@ export function DonatePage() {
                       value={donorName}
                       onChange={(e) => setDonorName(e.target.value)}
                       placeholder="Anonymous Supporter"
-                      className="w-full text-xs p-3 bg-slate-50 dark:bg-[#02140C] border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-500 focus:bg-white dark:focus:bg-[#02140C] focus:outline-none transition-colors"
+                      className="w-full text-xs p-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-500 focus:bg-white dark:focus:bg-slate-950 focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -417,7 +417,7 @@ export function DonatePage() {
                       value={donorEmail}
                       onChange={(e) => setDonorEmail(e.target.value)}
                       placeholder="you@example.com"
-                      className="w-full text-xs p-3 bg-slate-50 dark:bg-[#02140C] border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-500 focus:bg-white dark:focus:bg-[#02140C] focus:outline-none transition-colors"
+                      className="w-full text-xs p-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-500 focus:bg-white dark:focus:bg-slate-950 focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -431,7 +431,7 @@ export function DonatePage() {
                       value={donorMessage}
                       onChange={(e) => setDonorMessage(e.target.value)}
                       placeholder="e.g., In support of the old-age home lunch visit"
-                      className="w-full text-xs p-3 bg-slate-50 dark:bg-[#02140C] border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-500 focus:bg-white dark:focus:bg-[#02140C] focus:outline-none transition-colors resize-none"
+                      className="w-full text-xs p-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-500 focus:bg-white dark:focus:bg-slate-950 focus:outline-none transition-colors resize-none"
                     />
                   </div>
 
@@ -475,7 +475,7 @@ export function DonatePage() {
                           {/* Dual Quick-Copy Grid: Google Pay Number & UPI ID */}
                           <div className="grid sm:grid-cols-2 gap-2.5 pt-1">
                             {/* GPay Number Box */}
-                            <div className="p-3 bg-slate-50 dark:bg-[#032014] border border-slate-200 dark:border-emerald-500/30 rounded-xl flex items-center justify-between gap-2 shadow-2xs">
+                            <div className="p-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl flex items-center justify-between gap-2 shadow-2xs">
                               <div className="min-w-0">
                                 <p className="text-[10px] uppercase font-mono text-slate-400 dark:text-emerald-400 font-semibold truncate">Google Pay / PhonePe</p>
                                 <p className="text-sm font-mono font-bold text-slate-900 dark:text-white">8428858856</p>
@@ -483,7 +483,7 @@ export function DonatePage() {
                               <button
                                 type="button"
                                 onClick={handleCopyGpay}
-                                className="p-1.5 rounded-lg hover:bg-slate-200/80 dark:hover:bg-emerald-500/20 text-slate-600 dark:text-emerald-400 transition-colors shrink-0"
+                                className="p-1.5 rounded-lg hover:bg-slate-200/80 dark:hover:bg-slate-800 text-slate-600 dark:text-emerald-400 transition-colors shrink-0"
                                 title="Copy Google Pay Number"
                               >
                                 {copiedGpay ? (
@@ -499,7 +499,7 @@ export function DonatePage() {
                             </div>
 
                             {/* UPI ID Box */}
-                            <div className="p-3 bg-slate-50 dark:bg-[#032014] border border-slate-200 dark:border-emerald-500/30 rounded-xl flex items-center justify-between gap-2 shadow-2xs">
+                            <div className="p-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl flex items-center justify-between gap-2 shadow-2xs">
                               <div className="min-w-0">
                                 <p className="text-[10px] uppercase font-mono text-slate-400 dark:text-emerald-400 font-semibold truncate">UPI ID (VPA)</p>
                                 <p className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-300 truncate">{paymentConfig.upiId}</p>
@@ -507,7 +507,7 @@ export function DonatePage() {
                               <button
                                 type="button"
                                 onClick={handleCopyUpi}
-                                className="p-1.5 rounded-lg hover:bg-slate-200/80 dark:hover:bg-emerald-500/20 text-slate-600 dark:text-emerald-400 transition-colors shrink-0"
+                                className="p-1.5 rounded-lg hover:bg-slate-200/80 dark:hover:bg-slate-800 text-slate-600 dark:text-emerald-400 transition-colors shrink-0"
                                 title="Copy UPI ID"
                               >
                                 {copiedUpi ? (
@@ -534,14 +534,14 @@ export function DonatePage() {
                             )}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full justify-center text-xs py-2.5 rounded-xl border border-slate-300 dark:border-emerald-500/30 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-emerald-500/10 font-semibold flex items-center gap-2 transition-colors"
+                            className="w-full justify-center text-xs py-2.5 rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 font-semibold flex items-center gap-2 transition-colors"
                           >
                             <MessageCircle className="w-4 h-4 text-emerald-600" />
                             <span>Send Screenshot on WhatsApp (+91 84288 58856)</span>
                           </a>
                         </>
                       ) : (
-                        <div className="p-4 bg-slate-50 dark:bg-[#032014] text-center rounded-xl text-xs text-slate-500 dark:text-slate-400 border border-dashed border-slate-200 dark:border-emerald-500/20">
+                        <div className="p-4 bg-slate-50 dark:bg-slate-950 text-center rounded-xl text-xs text-slate-500 dark:text-slate-400 border border-dashed border-slate-200 dark:border-slate-800">
                           Please select at least one cause or preset above to proceed with payment.
                         </div>
                       )}
@@ -617,7 +617,7 @@ export function DonatePage() {
               </div>
 
               {/* Privacy & Non-storage Guarantee */}
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-[#031C11] p-4 rounded-xl border border-slate-200/80 dark:border-white/10 leading-relaxed space-y-1.5">
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-900 p-4 rounded-xl border border-slate-200/80 dark:border-white/10 leading-relaxed space-y-1.5">
                 <p className="font-semibold text-slate-700 dark:text-slate-300 font-mono uppercase text-[10px] tracking-wider">Privacy &amp; Data Ethics:</p>
                 <p>
                   No donor accounts, passwords, or personal databases are maintained. Your name and message remain strictly on your local browser during this session.
@@ -630,7 +630,7 @@ export function DonatePage() {
       </section>
 
       {/* Section 7: Sponsor a Complete Activity */}
-      <section id="sponsor-activity" className="py-16 sm:py-20 bg-slate-50 dark:bg-[#03160E] border-t border-slate-200/80 dark:border-white/10">
+      <section id="sponsor-activity" className="py-16 sm:py-20 bg-slate-50 dark:bg-[#0B0F19] border-t border-slate-200/80 dark:border-white/10">
         <div className="container-max container-px">
           <Reveal>
             <div className="max-w-3xl mb-12">
@@ -650,7 +650,7 @@ export function DonatePage() {
           <div className="grid md:grid-cols-2 gap-8">
             {activitySponsorships.map((sponsorship, index) => (
               <Reveal key={sponsorship.id} delay={index * 80}>
-                <div className="h-full bg-white dark:bg-[#031C11] border border-slate-200/80 dark:border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between shadow-xs hover:border-emerald-500/40 hover:shadow-md transition-all">
+                <div className="h-full bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between shadow-xs hover:border-emerald-500/40 hover:shadow-md transition-all">
                   <div>
                     {/* Activity Image Banner if available */}
                     {sponsorship.image && (
@@ -662,7 +662,7 @@ export function DonatePage() {
                           loading="lazy"
                         />
                         <div className="absolute top-3 left-3">
-                          <span className="px-3 py-1 text-[10px] font-mono font-bold tracking-wider text-emerald-300 bg-[#02140C]/90 rounded-full uppercase border border-emerald-500/30">
+                          <span className="px-3 py-1 text-[10px] font-mono font-bold tracking-wider text-emerald-300 bg-slate-900/90 rounded-full uppercase border border-emerald-500/30">
                             {sponsorship.category} &bull; {sponsorship.status}
                           </span>
                         </div>
@@ -691,7 +691,7 @@ export function DonatePage() {
                         {sponsorship.shortDescription}
                       </p>
 
-                      <div className="bg-slate-50 dark:bg-[#02140C] p-4 rounded-xl mb-4 space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border border-slate-100 dark:border-white/10">
+                      <div className="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl mb-4 space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border border-slate-100 dark:border-white/10">
                         <p>
                           <strong className="text-slate-900 dark:text-white">What this target covers:</strong>{' '}
                           {sponsorship.targetDescription}
@@ -740,21 +740,21 @@ export function DonatePage() {
           </div>
 
           {/* Transparent Funding Policy Card */}
-          <div className="mt-12 p-6 sm:p-8 bg-white dark:bg-[#031C11] border border-slate-200/80 dark:border-white/10 rounded-2xl shadow-xs">
+          <div className="mt-12 p-6 sm:p-8 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 rounded-2xl shadow-xs">
             <h4 className="font-serif font-bold text-slate-900 dark:text-white text-lg mb-2 flex items-center gap-2">
               <HelpCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
               Transparent Activity Funding Policies
             </h4>
             <div className="grid sm:grid-cols-3 gap-6 text-xs text-slate-600 dark:text-slate-300 mt-4">
-              <div className="p-4 bg-slate-50 dark:bg-[#02140C] rounded-xl border border-slate-100 dark:border-white/10">
+              <div className="p-4 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-100 dark:border-white/10">
                 <strong className="text-slate-900 dark:text-white block mb-1 font-mono uppercase text-[11px] tracking-wider">Partial Funding</strong>
                 If an activity receives partial sponsorship, funds are held in transparent reserve strictly for that specific drive until remaining resources are secured.
               </div>
-              <div className="p-4 bg-slate-50 dark:bg-[#02140C] rounded-xl border border-slate-100 dark:border-white/10">
+              <div className="p-4 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-100 dark:border-white/10">
                 <strong className="text-slate-900 dark:text-white block mb-1 font-mono uppercase text-[11px] tracking-wider">Surplus Funding</strong>
                 If contributions exceed the target of a specific drive, surplus funds are rolled forward to the subsequent scheduled drive under the same cause.
               </div>
-              <div className="p-4 bg-slate-50 dark:bg-[#02140C] rounded-xl border border-slate-100 dark:border-white/10">
+              <div className="p-4 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-100 dark:border-white/10">
                 <strong className="text-slate-900 dark:text-white block mb-1 font-mono uppercase text-[11px] tracking-wider">Postponement or Delays</strong>
                 If weather or on-ground conditions require postponing an initiative (e.g. seed sowing), activities are rescheduled to the earliest viable period.
               </div>
@@ -764,7 +764,7 @@ export function DonatePage() {
       </section>
 
       {/* Alternative Participation Reminder */}
-      <section className="relative py-16 bg-[#02140C] text-white text-center cyber-grid-dark border-t border-emerald-500/20">
+      <section className="relative py-16 bg-[#0B0F19] text-white text-center border-t border-slate-800">
         <div className="container-max container-px max-w-2xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono uppercase tracking-widest mb-4">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

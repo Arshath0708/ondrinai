@@ -92,7 +92,7 @@ export function GalleryPage() {
       />
 
       {/* Category Filter Tabs */}
-      <section className="glass-light dark:bg-[#02140C]/90 backdrop-blur-md border-b border-slate-200 dark:border-white/10 py-4 sticky top-20 sm:top-24 z-30 shadow-xs">
+      <section className="glass-light dark:bg-[#0B0F19]/90 backdrop-blur-md border-b border-slate-200 dark:border-white/10 py-4 sticky top-20 sm:top-24 z-30 shadow-xs">
         <div className="container-max container-px">
           <div
             className="flex items-center gap-2.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none"
@@ -119,7 +119,7 @@ export function GalleryPage() {
                   className={`px-5 py-2 text-xs sm:text-sm font-semibold rounded-full transition-all whitespace-nowrap cursor-pointer ${
                     isActive
                       ? 'bg-slate-900 dark:bg-emerald-400 text-white dark:text-slate-950 shadow-md font-bold'
-                      : 'bg-white dark:bg-[#031C11] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400'
+                      : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400'
                   }`}
                 >
                   {cat.label}
@@ -134,7 +134,7 @@ export function GalleryPage() {
       </section>
 
       {/* Pure Photo Grid Section */}
-      <section className="py-12 sm:py-16 bg-white dark:bg-[#02110A]">
+      <section className="py-12 sm:py-16 bg-white dark:bg-[#0B0F19]">
         <div className="container-max container-px">
           {filteredItems.length === 0 ? (
             /* Empty State */

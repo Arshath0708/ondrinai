@@ -66,7 +66,7 @@ export const INSTAGRAM_URL = 'https://www.instagram.com/ondrinai';
 export const paymentConfig = {
   isEnabled: true,
   gpayNumber: '8428858856',
-  upiId: '8428858856@okaxis', // Live Google Pay Axis UPI handle
+  upiId: 'a.arshathabdulla@okhdfcbank', // Live Google Pay HDFC UPI handle
   recipientName: 'Arshath Abdulla A (ONDRINAI)',
   merchantCode: '',
   transactionNotePrefix: 'ONDRINAI Community Aid',

@@ -121,7 +121,7 @@ export function CTASection({
   const isDark = variant === 'dark';
 
   return (
-    <section className={`relative overflow-hidden py-20 sm:py-28 ${isDark ? 'bg-[#02140C] text-white border-t border-emerald-500/20' : 'bg-slate-50 dark:bg-[#02140C] text-slate-900 dark:text-white border-t border-slate-200/80 dark:border-white/10'}`}>
+    <section className={`relative overflow-hidden py-20 sm:py-28 ${isDark ? 'bg-slate-950 dark:bg-[#0B0F19] text-white border-t border-slate-800' : 'bg-slate-50 dark:bg-[#0B0F19] text-slate-900 dark:text-white border-t border-slate-200/80 dark:border-slate-800'}`}>
       {/* Solarpunk subtle ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="container-max container-px text-center relative z-10">
@@ -177,7 +177,7 @@ export function PageHero({ eyebrow, title, intro, subtitle, variant = 'cream' }:
   const description = intro || subtitle;
 
   return (
-    <section className={`relative pt-32 pb-16 sm:pt-36 sm:pb-20 border-b ${isForest ? 'bg-[#02140C] text-white border-emerald-500/20' : 'bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-[#03150D] dark:via-[#02140C] dark:to-[#03150D] text-slate-900 dark:text-white border-slate-200/80 dark:border-white/10'}`}>
+    <section className={`relative pt-32 pb-16 sm:pt-36 sm:pb-20 border-b ${isForest ? 'bg-slate-950 dark:bg-[#0B0F19] text-white border-slate-800' : 'bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-[#0B0F19] dark:to-slate-950 text-slate-900 dark:text-white border-slate-200/80 dark:border-slate-800'}`}>
       <div className="container-max container-px relative z-10">
         <Reveal>
           {eyebrow && (

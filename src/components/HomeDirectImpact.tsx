@@ -14,7 +14,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { contributionCauses } from '@/data/contributions';
-import { ASSETS, WHATSAPP_COMMUNITY_URL } from '@/config/site';
+import { ASSETS, WHATSAPP_COMMUNITY_URL, paymentConfig } from '@/config/site';
 import { Reveal } from '@/components/ui/Primitives';
 
 const causeImages: Record<string, string> = {
@@ -140,18 +140,18 @@ export function HomeDirectImpact() {
   const upiPaymentUrl = useMemo(() => {
     if (totalAmount <= 0) return '';
     const note = encodeURIComponent(`ONDRINAI Aid: ${selectedItems.map((i) => `${i.title} x${i.quantity}`).join(', ')}`.slice(0, 80));
-    return `upi://pay?pa=8428858856@okaxis&pn=Arshath%20Abdulla%20ONDRINAI&am=${totalAmount}&cu=INR&tn=${note}`;
+    return `upi://pay?pa=${paymentConfig.upiId}&pn=${encodeURIComponent(paymentConfig.recipientName)}&am=${totalAmount}&cu=INR&tn=${note}`;
   }, [totalAmount, selectedItems]);
 
   return (
-    <section id="direct-impact" className="bg-slate-50 dark:bg-[#02140C] py-20 sm:py-28 border-b border-slate-200/80 dark:border-emerald-500/20 relative cyber-grid">
+    <section id="direct-impact" className="bg-slate-50 dark:bg-[#0B0F19] py-20 sm:py-28 border-b border-slate-200/80 dark:border-slate-800 relative editorial-mesh">
       <div className="container-max container-px relative z-10">
         {/* Section Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-semibold tracking-wider mb-4">
               <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
-              <span>DIRECT COMMUNITY ACTION &bull; EVERY RUPEE REACHES THE GROUND</span>
+              <span>DIRECT CITIZEN ACTION &bull; 100% REACHES THE GROUND</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-slate-900 dark:text-white text-balance tracking-tight">
               Sponsor a meal. Plant a tree.
@@ -166,7 +166,7 @@ export function HomeDirectImpact() {
 
         {/* 1-CLICK FAST SPONSOR ACCELERATOR (Fast Donation Bundles) */}
         <Reveal delay={60}>
-          <div className="bg-white/80 dark:bg-[#031C11] backdrop-blur-md border border-slate-200 dark:border-emerald-500/20 rounded-2xl p-4 sm:p-5 mb-10 shadow-sm max-w-5xl mx-auto">
+          <div className="bg-white dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 mb-10 shadow-sm max-w-5xl mx-auto">
             <div className="flex items-center justify-between gap-2 mb-3">
               <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 dark:text-emerald-400 font-bold flex items-center gap-1.5">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-beacon" />
@@ -178,7 +178,7 @@ export function HomeDirectImpact() {
               <button
                 type="button"
                 onClick={() => applyBundle({ 'breakfast-person': 1 })}
-                className="p-2.5 text-left rounded-xl bg-slate-50 dark:bg-[#02140C] hover:bg-emerald-50 dark:hover:bg-emerald-950/60 border border-slate-200 dark:border-white/10 hover:border-emerald-400 dark:hover:border-emerald-500/40 transition-all group"
+                className="p-3 text-left rounded-xl bg-slate-50 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all group"
               >
                 <div className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 font-serif">🍲 Feed 1 Elder</div>
                 <div className="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">₹30 &bull; Breakfast</div>
@@ -186,7 +186,7 @@ export function HomeDirectImpact() {
               <button
                 type="button"
                 onClick={() => applyBundle({ 'breakfast-person': 1, 'lunch-person': 1, 'dinner-person': 1 })}
-                className="p-2.5 text-left rounded-xl bg-slate-50 dark:bg-[#02140C] hover:bg-emerald-50 dark:hover:bg-emerald-950/60 border border-slate-200 dark:border-white/10 hover:border-emerald-400 dark:hover:border-emerald-500/40 transition-all group"
+                className="p-3 text-left rounded-xl bg-slate-50 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all group"
               >
                 <div className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 font-serif">🍱 Full Day Meals</div>
                 <div className="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">₹120 &bull; 3 Feeds</div>
@@ -194,31 +194,31 @@ export function HomeDirectImpact() {
               <button
                 type="button"
                 onClick={() => applyBundle({ 'stray-animal-food': 2 })}
-                className="p-2.5 text-left rounded-xl bg-slate-50 dark:bg-[#02140C] hover:bg-emerald-50 dark:hover:bg-emerald-950/60 border border-slate-200 dark:border-white/10 hover:border-emerald-400 dark:hover:border-emerald-500/40 transition-all group"
+                className="p-3 text-left rounded-xl bg-slate-50 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all group"
               >
                 <div className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 font-serif">🐕 Feed 2 Dogs</div>
-                <div className="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">₹40 &bull; 2 Feeds</div>
+                <div className="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">₹40 &bull; 2 Bowls</div>
               </button>
               <button
                 type="button"
                 onClick={() => applyBundle({ 'plant-tree': 1 })}
-                className="p-2.5 text-left rounded-xl bg-slate-50 dark:bg-[#02140C] hover:bg-emerald-50 dark:hover:bg-emerald-950/60 border border-slate-200 dark:border-white/10 hover:border-emerald-400 dark:hover:border-emerald-500/40 transition-all group"
+                className="p-3 text-left rounded-xl bg-slate-50 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all group"
               >
                 <div className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 font-serif">🌱 Plant 1 Tree</div>
                 <div className="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">₹70 &bull; Palmyra</div>
               </button>
               <button
                 type="button"
-                onClick={() => applyBundle({ 'breakfast-person': 1, 'lunch-person': 1, 'dinner-person': 1 })}
-                className="p-2.5 text-left rounded-xl bg-slate-50 dark:bg-[#02140C] hover:bg-emerald-50 dark:hover:bg-emerald-950/60 border border-slate-200 dark:border-white/10 hover:border-emerald-400 dark:hover:border-emerald-500/40 transition-all group"
+                onClick={() => applyBundle({ 'breakfast-person': 5 })}
+                className="p-3 text-left rounded-xl bg-slate-50 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all group"
               >
-                <div className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 font-serif">🍲 Full Day Meals</div>
-                <div className="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">₹120 &bull; 3 Warm Meals</div>
+                <div className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 font-serif">👨‍👩‍👧 5 Street Meals</div>
+                <div className="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">₹150 &bull; 5 People</div>
               </button>
               <button
                 type="button"
                 onClick={() => applyBundle({ 'lunch-person': 1, 'stray-animal-food': 1, 'plant-tree': 1 })}
-                className="p-2.5 text-left rounded-xl bg-gradient-to-r from-amber-50 to-emerald-50 dark:from-amber-950/40 dark:to-emerald-950/40 hover:from-amber-100 hover:to-emerald-100 border border-amber-300 dark:border-amber-500/40 hover:border-amber-400 transition-all group shadow-xs"
+                className="p-3 text-left rounded-xl bg-gradient-to-r from-amber-50 to-emerald-50 dark:from-amber-950/40 dark:to-emerald-950/40 hover:from-amber-100 hover:to-emerald-100 border border-amber-300 dark:border-amber-500/40 hover:border-amber-400 transition-all group shadow-xs"
               >
                 <div className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-300 font-serif">🌟 Trinity Pack</div>
                 <div className="text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 mt-0.5">₹140 &bull; Meal + Tree + Dog</div>
@@ -235,8 +235,8 @@ export function HomeDirectImpact() {
               onClick={() => setSelectedCategory('ALL')}
               className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                 selectedCategory === 'ALL'
-                  ? 'bg-slate-900 dark:bg-emerald-400 text-white dark:text-slate-950 shadow-md font-bold'
-                  : 'bg-white dark:bg-[#031C11] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10'
+                  ? 'bg-slate-900 dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-bold'
+                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
               }`}
             >
               All Causes ({contributionCauses.length})
@@ -246,8 +246,8 @@ export function HomeDirectImpact() {
               onClick={() => setSelectedCategory('FEED')}
               className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                 selectedCategory === 'FEED'
-                  ? 'bg-slate-900 dark:bg-emerald-400 text-white dark:text-slate-950 shadow-md font-bold'
-                  : 'bg-white dark:bg-[#031C11] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10'
+                  ? 'bg-slate-900 dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-bold'
+                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
               }`}
             >
               🍲 Meals & Feeding (3)
@@ -257,8 +257,8 @@ export function HomeDirectImpact() {
               onClick={() => setSelectedCategory('PLANT')}
               className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                 selectedCategory === 'PLANT'
-                  ? 'bg-slate-900 dark:bg-emerald-400 text-white dark:text-slate-950 shadow-md font-bold'
-                  : 'bg-white dark:bg-[#031C11] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10'
+                  ? 'bg-slate-900 dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-bold'
+                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
               }`}
             >
               🌱 Native Trees (1)
@@ -269,8 +269,8 @@ export function HomeDirectImpact() {
               onClick={() => setSelectedCategory('RESPOND')}
               className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                 selectedCategory === 'RESPOND'
-                  ? 'bg-slate-900 dark:bg-emerald-400 text-white dark:text-slate-950 shadow-md font-bold'
-                  : 'bg-white dark:bg-[#031C11] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10'
+                  ? 'bg-slate-900 dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-bold'
+                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
               }`}
             >
               🐕 Animal Welfare (1)
@@ -298,9 +298,9 @@ export function HomeDirectImpact() {
                   className={`border transition-all duration-300 rounded-2xl overflow-hidden flex flex-col justify-between group ${
                     qty > 0
                       ? isWater
-                        ? 'bg-sky-50/40 dark:bg-[#021F2B] border-sky-500 shadow-[0_10px_30px_rgba(14,165,233,0.3)] ring-2 ring-sky-500/40'
-                        : 'bg-emerald-50/40 dark:bg-[#032415] border-emerald-600 dark:border-emerald-500 shadow-[0_10px_30px_rgba(16,185,129,0.25)] ring-2 ring-emerald-500/40'
-                      : 'bg-white dark:bg-[#031B10] border-slate-200 dark:border-white/10 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-2xl dark:hover:shadow-[0_10px_35px_rgba(0,0,0,0.7)] hover:-translate-y-1'
+                        ? 'bg-sky-50/40 dark:bg-slate-900 border-sky-500 shadow-[0_10px_30px_rgba(14,165,233,0.3)] ring-2 ring-sky-500/40'
+                        : 'bg-emerald-50/40 dark:bg-slate-900 border-emerald-600 dark:border-emerald-500 shadow-[0_10px_30px_rgba(16,185,129,0.25)] ring-2 ring-emerald-500/40'
+                      : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-xl hover:-translate-y-1'
                   }`}
                 >
                   {/* Image & Price Header */}
@@ -342,8 +342,8 @@ export function HomeDirectImpact() {
                       {/* Prominent Price Tag Badge */}
                       <div className={`absolute bottom-3 right-3 backdrop-blur-md px-3.5 py-1.5 shadow-lg rounded-xl text-right border ${
                         isWater
-                          ? 'bg-white/95 dark:bg-[#021824]/90 border-sky-500/40'
-                          : 'bg-white/95 dark:bg-[#02140C]/90 border-emerald-500/30'
+                          ? 'bg-white/95 dark:bg-slate-900/95 border-sky-500/40'
+                          : 'bg-white/95 dark:bg-slate-900/95 border-emerald-500/30'
                       }`}>
                         <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono uppercase font-semibold block leading-none">
                           Micro-Sponsorship
@@ -360,7 +360,7 @@ export function HomeDirectImpact() {
                     </div>
 
                     {/* Card Body */}
-                    <div className="p-5 sm:p-6 bg-white dark:bg-[#031B10]">
+                    <div className="p-5 sm:p-6 bg-white dark:bg-slate-900">
                       <h3 className="text-lg font-serif font-bold text-slate-900 dark:text-white leading-snug">
                         {cause.title}
                       </h3>
@@ -369,7 +369,7 @@ export function HomeDirectImpact() {
                       </p>
                       
                       {/* Emotional Ground Context */}
-                      <div className="mt-3.5 p-3 rounded-xl bg-slate-50 dark:bg-[#02130B] border border-slate-200/80 dark:border-white/10 text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed flex items-start gap-2">
+                      <div className="mt-3.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed flex items-start gap-2">
                         {isWater ? (
                           <Droplets className="w-3.5 h-3.5 text-sky-500 shrink-0 mt-0.5" />
                         ) : (
@@ -381,7 +381,7 @@ export function HomeDirectImpact() {
                   </div>
 
                   {/* Quantity & Impact Selector Footer */}
-                  <div className="p-5 sm:p-6 pt-0 border-t border-slate-100 dark:border-white/10 mt-auto bg-slate-50/60 dark:bg-[#02140C]/80">
+                  <div className="p-5 sm:p-6 pt-0 border-t border-slate-100 dark:border-slate-800 mt-auto bg-slate-50/60 dark:bg-slate-900/80">
                     <div className="flex items-center justify-between gap-3 pt-4 mb-3">
                       <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider font-mono">
                         Select Quantity:
@@ -399,13 +399,13 @@ export function HomeDirectImpact() {
 
                     {/* Stepper Controls */}
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <div className="inline-flex items-center border border-slate-300 dark:border-white/15 bg-white dark:bg-[#031E12] rounded-xl shadow-2xs overflow-hidden">
+                      <div className="inline-flex items-center border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-xl shadow-2xs overflow-hidden">
                         <button
                           type="button"
                           onClick={() => updateQuantity(cause.id, -1)}
                           disabled={qty === 0}
                           aria-label={`Decrease ${cause.title}`}
-                          className="w-9 h-9 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                          className="w-9 h-9 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                         >
                           <Minus className="w-3.5 h-3.5" />
                         </button>
@@ -416,7 +416,7 @@ export function HomeDirectImpact() {
                           type="button"
                           onClick={() => updateQuantity(cause.id, 1)}
                           aria-label={`Increase ${cause.title}`}
-                          className={`w-9 h-9 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-white/10 transition-colors font-bold ${
+                          className={`w-9 h-9 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors font-bold ${
                             isWater ? 'text-sky-600 dark:text-sky-400' : 'text-emerald-700 dark:text-emerald-400'
                           }`}
                         >
@@ -436,7 +436,7 @@ export function HomeDirectImpact() {
                                 ? isWater
                                   ? 'bg-sky-600 text-white border-sky-600 font-bold shadow-[0_0_12px_rgba(14,165,233,0.4)]'
                                   : 'bg-emerald-600 text-white border-emerald-600 font-bold shadow-[0_0_12px_rgba(16,185,129,0.4)]'
-                                : 'bg-white dark:bg-[#031E12] border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-400'
+                                : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-400'
                             }`}
                           >
                             {p}
@@ -490,44 +490,51 @@ export function HomeDirectImpact() {
           </div>
         </Reveal>
 
-        {/* Live Floating 2100 Impact Dock */}
+        {/* Live Floating Impact Dock */}
         {totalAmount > 0 && (
-          <div className="sticky bottom-6 z-40 mt-10">
+          <div className="fixed sm:sticky bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-auto z-40 mt-10">
             <Reveal>
-              <div className="glass-hud text-white p-4 sm:p-6 rounded-3xl shadow-[0_20px_60px_rgba(3,32,20,0.6)] border border-emerald-400/40 backdrop-blur-2xl flex flex-col md:flex-row items-center justify-between gap-4 animate-fade-in max-w-4xl mx-auto ring-2 ring-emerald-500/20">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 via-amber-600 to-emerald-500 flex items-center justify-center shrink-0 shadow-[0_0_25px_rgba(245,158,11,0.5)]">
-                    <Heart className="w-7 h-7 text-white fill-white/30" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs uppercase tracking-wider font-mono text-emerald-300 font-bold flex items-center gap-1.5">
-                        <span className="h-2 w-2 rounded-full bg-emerald-400 animate-beacon" />
-                        {totalUnits} Direct {totalUnits === 1 ? 'Sponsorship' : 'Sponsorships'} Active
-                      </span>
-                      <span className="text-white/30">&bull;</span>
-                      <span className="text-[11px] font-mono text-emerald-200">100% Raw Provisioning</span>
+              <div className="glass-hud text-white p-3.5 sm:p-5 rounded-2xl sm:rounded-3xl shadow-[0_15px_50px_rgba(0,0,0,0.5)] border border-emerald-400/40 backdrop-blur-2xl flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 animate-fade-in max-w-4xl mx-auto ring-1 ring-emerald-500/30">
+                <div className="flex items-center gap-3 sm:gap-4 w-full md:w-auto justify-between md:justify-start">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-amber-500 to-emerald-500 flex items-center justify-center shrink-0 shadow-md">
+                      <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-white fill-white/30" />
                     </div>
-                    <p className="text-2xl sm:text-3xl font-serif font-extrabold text-white mt-0.5 tracking-tight">
-                      Total: ₹{totalAmount.toLocaleString('en-IN')}
-                    </p>
-                    <p className="text-xs text-white/80 max-w-md truncate font-sans">
-                      {selectedItems.map((item) => `${item.title} x${item.quantity}`).join(' • ')}
-                    </p>
+                    <div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[10px] sm:text-xs uppercase tracking-wider font-mono text-emerald-300 font-bold flex items-center gap-1">
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-beacon" />
+                          {totalUnits} {totalUnits === 1 ? 'Pack' : 'Packs'}
+                        </span>
+                        <span className="text-white/30">&bull;</span>
+                        <span className="text-[10px] sm:text-[11px] font-mono text-emerald-200">100% Direct</span>
+                      </div>
+                      <p className="text-xl sm:text-2xl font-serif font-extrabold text-white leading-none mt-0.5">
+                        Total: ₹{totalAmount.toLocaleString('en-IN')}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
                   <button
                     type="button"
                     onClick={resetAll}
-                    className="text-xs text-white/60 hover:text-white underline px-2 py-2"
+                    className="text-xs text-white/60 hover:text-white underline md:hidden px-2 py-1"
+                  >
+                    Clear
+                  </button>
+                </div>
+
+                <div className="flex items-center gap-2 w-full md:w-auto">
+                  <button
+                    type="button"
+                    onClick={resetAll}
+                    className="text-xs text-white/60 hover:text-white underline hidden md:inline-block px-2 py-2"
                   >
                     Reset
                   </button>
                   <a
                     href={upiPaymentUrl}
-                    className="btn-donate text-xs sm:text-sm px-4 py-3 rounded-xl flex-1 md:flex-initial justify-center shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center gap-1.5"
+                    className="btn-donate text-xs sm:text-sm px-4 py-3 rounded-xl flex-1 md:flex-initial justify-center shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center gap-1.5 font-bold"
                     title="Pay directly via Google Pay or any UPI app"
                   >
                     <span>⚡ Pay ₹{totalAmount} via GPay / UPI</span>
@@ -536,17 +543,17 @@ export function HomeDirectImpact() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm transition-colors border border-white/15"
+                    className="inline-flex items-center gap-1.5 px-3 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm transition-colors border border-white/15"
                     title="Send details via WhatsApp"
                   >
                     <MessageCircle className="w-4 h-4 text-emerald-400" />
-                    <span>WhatsApp</span>
+                    <span className="hidden sm:inline">WhatsApp</span>
                   </a>
                   <Link
                     to={donatePageUrl}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-3 rounded-xl border border-white/20 hover:bg-white/10 text-white font-semibold text-xs sm:text-sm transition-colors"
+                    className="inline-flex items-center gap-1 px-3 py-3 rounded-xl border border-white/20 hover:bg-white/10 text-white font-semibold text-xs sm:text-sm transition-colors"
                   >
-                    <span>Summary</span>
+                    <span className="hidden sm:inline">Summary</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -557,39 +564,39 @@ export function HomeDirectImpact() {
 
         {/* Authenticity & Transparency Pillars */}
         <Reveal delay={200}>
-          <div className="mt-16 pt-12 border-t border-slate-200 grid sm:grid-cols-3 gap-6 text-center sm:text-left">
-            <div className="bg-white/90 p-6 border border-slate-200 rounded-2xl shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-emerald-200">
+          <div className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-800 grid sm:grid-cols-3 gap-6 text-center sm:text-left">
+            <div className="bg-white dark:bg-slate-900 p-6 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-emerald-200 dark:border-emerald-800">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h4 className="font-serif font-bold text-slate-900 text-base">
+              <h4 className="font-serif font-bold text-slate-900 dark:text-white text-base">
                 100% Direct Provisioning
               </h4>
-              <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
                 Zero administrative salaries or cuts. Every single rupee is converted directly into meals, native seeds, and essential community supplies.
               </p>
             </div>
 
-            <div className="bg-white/90 p-6 border border-slate-200 rounded-2xl shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-emerald-200">
+            <div className="bg-white dark:bg-slate-900 p-6 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-emerald-200 dark:border-emerald-800">
                 <Check className="w-5 h-5" />
               </div>
-              <h4 className="font-serif font-bold text-slate-900 text-base">
+              <h4 className="font-serif font-bold text-slate-900 dark:text-white text-base">
                 Verified Ground Photos
               </h4>
-              <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
                 Every food drive, tree planting initiative, and community visit is documented with real field photographs published openly in our public gallery.
               </p>
             </div>
 
-            <div className="bg-white/90 p-6 border border-slate-200 rounded-2xl shadow-xs">
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-emerald-200">
+            <div className="bg-white dark:bg-slate-900 p-6 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 flex items-center justify-center mb-3 mx-auto sm:mx-0 border border-emerald-200 dark:border-emerald-800">
                 <Sparkles className="w-5 h-5" />
               </div>
-              <h4 className="font-serif font-bold text-slate-900 text-base">
-                Student & Volunteer Led
+              <h4 className="font-serif font-bold text-slate-900 dark:text-white text-base">
+                Student &amp; Volunteer Led
               </h4>
-              <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
                 Built by local youth volunteers waking up early to cook, package, plant, and serve with love &mdash; not one person, but all of us, together.
               </p>
             </div>

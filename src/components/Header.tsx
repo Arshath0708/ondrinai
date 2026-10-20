@@ -37,7 +37,7 @@ export function Header() {
   return (
     <>
       {/* High-Impact Announcement & Live Signal Strip */}
-      <div className="bg-[#02140C] border-b border-emerald-500/20 text-slate-200 py-2 px-4 text-xs tracking-wider flex items-center justify-center gap-2.5 overflow-hidden">
+      <div className="bg-[#0B0F19] border-b border-emerald-500/20 text-slate-200 py-2 px-4 text-xs tracking-wider flex items-center justify-center gap-2.5 overflow-hidden">
         <span className="relative flex h-2 w-2 shrink-0">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
@@ -50,14 +50,14 @@ export function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/95 dark:bg-[#02140C]/95 backdrop-blur-md shadow-sm dark:shadow-[0_4px_25px_rgba(0,0,0,0.6)] border-b border-slate-200/90 dark:border-emerald-500/20'
-            : 'bg-white/90 dark:bg-[#02140C]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-emerald-500/20'
+            ? 'bg-white/95 dark:bg-[#0B0F19]/95 backdrop-blur-md shadow-sm dark:shadow-[0_4px_25px_rgba(0,0,0,0.6)] border-b border-slate-200/90 dark:border-slate-800'
+            : 'bg-white/90 dark:bg-[#0B0F19]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80'
         }`}
       >
         <div className="container-max container-px">
           <div
             className={`flex items-center justify-between transition-all duration-300 ${
-              scrolled ? 'h-16 sm:h-18' : 'h-18 sm:h-20'
+              scrolled ? 'h-14 sm:h-16' : 'h-16 sm:h-18'
             }`}
           >
             {/* Left: Brand Identity */}
@@ -130,51 +130,71 @@ export function Header() {
       {/* Mobile menu overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 top-0 z-40 bg-white dark:bg-[#02140C] lg:hidden animate-fade-in flex flex-col justify-between overflow-y-auto pt-24 sm:pt-28"
+          className="fixed inset-0 z-50 bg-white dark:bg-[#0B0F19] lg:hidden animate-fade-in flex flex-col justify-between overflow-y-auto"
           id="mobile-menu"
         >
-          {/* Quick Emotional Fast-Sponsor Card on Mobile */}
-          <div className="px-6 pt-3">
-            <div className="p-4 rounded-2xl bg-gradient-to-br from-[#063D24] to-[#032014] border border-emerald-500/30 text-white shadow-xl">
+          {/* Mobile Menu Top Bar */}
+          <div className="h-16 px-4 sm:px-6 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 shrink-0">
+            <Link to="/" onClick={() => setIsOpen(false)} aria-label="ONDRINAI home">
+              <Logo variant={isDark ? 'light' : 'dark'} size="md" />
+            </Link>
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <button
+                type="button"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 focus:outline-none transition-colors"
+                onClick={() => setIsOpen(false)}
+                aria-label="Close menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Quick Micro-Sponsorship Card on Mobile */}
+          <div className="px-5 pt-4">
+            <div className="p-4 rounded-2xl bg-slate-900 border border-emerald-500/30 text-white shadow-xl">
               <div className="flex items-center justify-between mb-1.5">
                 <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">Fast Micro-Sponsorship</span>
                 <span className="text-xs font-serif font-extrabold text-amber-400">₹30 = 1 Soul Fed</span>
               </div>
-              <p className="text-xs text-white/80 mb-3 leading-snug">
-                Feed an elderly person or stray animal waiting on the streets right now.
+              <p className="text-xs text-slate-300 mb-3 leading-snug">
+                Feed an elderly street resident or stray dog in Madurai today. Zero admin cuts.
               </p>
               <Link
                 to="/donate?cause_breakfast-person=1"
-                className="btn-donate w-full justify-center text-xs py-2.5 rounded-lg shadow-md"
+                onClick={() => setIsOpen(false)}
+                className="btn-donate w-full justify-center text-xs py-2.5 rounded-xl shadow-md font-bold"
               >
                 ⚡ Sponsor a Meal &bull; ₹30
               </Link>
             </div>
           </div>
 
-          <nav className="flex flex-col px-6 pt-4 pb-4 gap-0.5" aria-label="Mobile navigation">
+          <nav className="flex flex-col px-6 py-3 gap-0.5" aria-label="Mobile navigation">
             {navItems.map((item, idx) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-xl sm:text-2xl font-serif font-medium py-3 border-b border-slate-200/80 dark:border-white/10 transition-colors animate-slide-in-right ${
-                  isActive(item.path) ? 'text-emerald-700 dark:text-emerald-400 font-semibold' : 'text-slate-800 dark:text-slate-200'
+                onClick={() => setIsOpen(false)}
+                className={`text-lg sm:text-xl font-serif font-medium py-3 border-b border-slate-100 dark:border-slate-800/80 transition-colors ${
+                  isActive(item.path) ? 'text-emerald-600 dark:text-emerald-400 font-bold' : 'text-slate-800 dark:text-slate-200'
                 }`}
-                style={{ animationDelay: `${idx * 40}ms` }}
+                style={{ animationDelay: `${idx * 30}ms` }}
               >
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          <div className="p-6 pb-10 border-t border-slate-200 dark:border-white/10 bg-slate-50/80 dark:bg-black/40">
+          <div className="p-6 pb-safe border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/80">
             <div className="flex items-center justify-center gap-3 mb-4">
               <a
                 href={siteConfig.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="ONDRINAI on Instagram"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-300 dark:border-emerald-500/30 text-slate-700 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -183,7 +203,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="ONDRINAI on LinkedIn"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-300 dark:border-emerald-500/30 text-slate-700 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -192,7 +212,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="ONDRINAI on YouTube"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-300 dark:border-emerald-500/30 text-slate-700 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors"
               >
                 <Youtube className="w-4 h-4" />
               </a>
@@ -201,7 +221,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="ONDRINAI on Facebook"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-300 dark:border-emerald-500/30 text-slate-700 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -213,9 +233,9 @@ export function Header() {
               href={WHATSAPP_COMMUNITY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary w-full justify-center rounded-xl py-3 font-semibold"
+              className="btn-primary w-full justify-center rounded-xl py-3 font-semibold text-sm shadow-md"
             >
-              Join Our Community
+              Join Our WhatsApp Community
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

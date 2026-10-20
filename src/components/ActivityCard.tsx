@@ -14,7 +14,7 @@ export function ActivityCard({ activity, index = 0 }: ActivityCardProps) {
   return (
     <Link
       to={`/activities/${activity.slug}`}
-      className="group flex flex-col bg-white dark:bg-[#032014] border border-slate-200/90 dark:border-emerald-500/20 rounded-2xl shadow-xs hover:shadow-xl hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
+      className="group flex flex-col bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-white/10 rounded-2xl shadow-xs hover:shadow-xl hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
     >
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-slate-900">
@@ -36,7 +36,7 @@ export function ActivityCard({ activity, index = 0 }: ActivityCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-6 sm:p-7 flex flex-col flex-grow justify-between bg-white dark:bg-[#032014]">
+      <div className="p-6 sm:p-7 flex flex-col flex-grow justify-between bg-white dark:bg-slate-900">
         <div>
           <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 dark:text-white text-balance group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
             {activity.title}
